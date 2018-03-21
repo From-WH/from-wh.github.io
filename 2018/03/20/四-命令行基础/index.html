@@ -1,0 +1,891 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="命令缩写     命令 全写 缩写     创建目录 make directory mkdir   删除 remove rm   移动 / 重命名 move mv   复制 copy cp   罗列 list ls   改变目录 change directory cd    缩写规则就是：删掉元音字幕（A E I O U），保留前 2 到 3 个辅音字母  做实验：1.cd ~/Desktop">
+<meta property="og:type" content="article">
+<meta property="og:title" content="四.命令行基础">
+<meta property="og:url" content="http://yoursite.com/2018/03/20/四-命令行基础/index.html">
+<meta property="og:site_name" content="From">
+<meta property="og:description" content="命令缩写     命令 全写 缩写     创建目录 make directory mkdir   删除 remove rm   移动 / 重命名 move mv   复制 copy cp   罗列 list ls   改变目录 change directory cd    缩写规则就是：删掉元音字幕（A E I O U），保留前 2 到 3 个辅音字母  做实验：1.cd ~/Desktop">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-585fad2d148c48e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-d5b871b291bf70e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-05d6eea68d9fd565.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-2953624f83abbc6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-ce54ca75ccdac46a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-42c7c5bbca6717a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta property="og:updated_time" content="2018-03-21T04:20:15.384Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="四.命令行基础">
+<meta name="twitter:description" content="命令缩写     命令 全写 缩写     创建目录 make directory mkdir   删除 remove rm   移动 / 重命名 move mv   复制 copy cp   罗列 list ls   改变目录 change directory cd    缩写规则就是：删掉元音字幕（A E I O U），保留前 2 到 3 个辅音字母  做实验：1.cd ~/Desktop">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-585fad2d148c48e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/20/四-命令行基础/"/>
+
+
+
+
+
+  <title>四.命令行基础 | From</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">From</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/四-命令行基础/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang hang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="From">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">四.命令行基础</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:13:17+08:00">
+                2018-03-20
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <ul>
+<li><strong>命令缩写</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>命令</th>
+<th>全写</th>
+<th>缩写</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>创建目录</td>
+<td>make directory</td>
+<td>mkdir</td>
+</tr>
+<tr>
+<td>删除</td>
+<td>remove</td>
+<td>rm</td>
+</tr>
+<tr>
+<td>移动 / 重命名</td>
+<td>move</td>
+<td>mv</td>
+</tr>
+<tr>
+<td>复制</td>
+<td>copy</td>
+<td>cp</td>
+</tr>
+<tr>
+<td>罗列</td>
+<td>list</td>
+<td>ls</td>
+</tr>
+<tr>
+<td>改变目录</td>
+<td>change directory</td>
+<td>cd</td>
+</tr>
+</tbody>
+</table>
+<p>缩写规则就是：删掉元音字幕（A E I O U），保留前 2 到 3 个辅音字母</p>
+<ul>
+<li><strong>做实验：</strong><br>1.<code>cd ~/Desktop</code> 进入桌面<br>2.<code>mkdir demo-1</code> 创建目录，这时你可以切到桌面，看到 demo-1 目录<br>3.<code>rm -rf demo-1</code> 删除目录<br>4.<code>touch 1.txt</code> 创建文件<br>5.<code>mv 1.txt 2.txt</code> 这样我们就把 1.txt 移到 2.txt 了，也就是重命名</li>
+<li><strong>常见的自带命令</strong></li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>进入目录</td>
+<td>cd</td>
+</tr>
+<tr>
+<td>显示当前目录</td>
+<td>pwd</td>
+</tr>
+<tr>
+<td>创建目录</td>
+<td>mkdir 目录名</td>
+</tr>
+<tr>
+<td>创建目录</td>
+<td>mkdir -p 目录路径</td>
+</tr>
+<tr>
+<td>我是谁</td>
+<td>whoami</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>查看路径</td>
+<td>ls 路径</td>
+</tr>
+<tr>
+<td>查看路径</td>
+<td>ls -a 路径</td>
+</tr>
+<tr>
+<td>查看路径</td>
+<td>ls -l 路径</td>
+</tr>
+<tr>
+<td>查看路径</td>
+<td>ls -al 路径</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>创建文件</td>
+<td>echo ‘1’ &gt; 文件路径</td>
+</tr>
+<tr>
+<td>强制创建文件</td>
+<td>echo ‘1’ &gt;! 文件路径</td>
+</tr>
+<tr>
+<td>追加文件内容</td>
+<td>echo ‘1’ &gt;&gt; 文件路径</td>
+</tr>
+<tr>
+<td>创建文件</td>
+<td>touch 文件名</td>
+</tr>
+<tr>
+<td>改变文件更新时间</td>
+<td>touch 文件名</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>复制文件</td>
+<td>cp 源路径 目标路径</td>
+</tr>
+<tr>
+<td>复制目录</td>
+<td>cp -r 源路径 目标路径</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>移动节点</td>
+<td>mv 源路径 目标路径</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>删除文件</td>
+<td>rm 文件路径</td>
+</tr>
+<tr>
+<td>强制删除文件</td>
+<td>rm -f 文件路径</td>
+</tr>
+<tr>
+<td>删除目录</td>
+<td>rm -r 目录路径</td>
+</tr>
+<tr>
+<td>强制删除目录</td>
+<td>rm -rf 目录路径</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>查看目录结构</td>
+<td>tree</td>
+</tr>
+<tr>
+<td>建立软链接</td>
+<td>ln -s 真实文件 链接</td>
+</tr>
+<tr>
+<td>–</td>
+<td>–</td>
+</tr>
+<tr>
+<td>下载文件</td>
+<td>curl -L <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a> &gt; baidu.html</td>
+</tr>
+<tr>
+<td>拷贝网页</td>
+<td>wget -p -H -e robots=off <a href="https://www.baidu.com/" title="null" target="_blank" rel="noopener">https://www.baidu.com</a></td>
+</tr>
+<tr>
+<td>磁盘占用</td>
+<td>df -kh</td>
+</tr>
+<tr>
+<td>当前目录大小</td>
+<td>du -sh .</td>
+</tr>
+<tr>
+<td>各文件大小</td>
+<td>du -h</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><strong>ls的应用</strong><br>1.<code>ls</code>查看当前文件夹里有哪些文件<br><img src="https://upload-images.jianshu.io/upload_images/11007474-585fad2d148c48e2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>2.<code>ls -a</code>显示所有文件及目录<br><img src="https://upload-images.jianshu.io/upload_images/11007474-d5b871b291bf70e7.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><br>3.<code>ls -l</code>除文件名称外，亦将文件型态、权限、拥有者、文件大小等资讯详细列出<br><img src="https://upload-images.jianshu.io/upload_images/11007474-05d6eea68d9fd565.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+<li>后面的自行实验<br><code>-r</code>将文件以相反次序显示(原定依英文字母次序)<br><code>-t</code> 将文件依建立时间之先后次序列出<br><code>-A</code>同 <code>-a</code> ，但不列出 “.” (目前目录) 及 “..” (父目录)<br><code>-F</code> 在列出的文件名称后加一符号；例如可执行档则加 “*”, 目录则加 “/“<br><code>-R</code> 若目录下有文件，则以下之文件亦皆依序列出</li>
+<li><strong>cat的应用</strong><br>1.把make1的文档内容加到make2的文档里<br><code>cat -n make1&gt;make2</code><br>2cat可以显示文件信息<br><img src="https://upload-images.jianshu.io/upload_images/11007474-2953624f83abbc6f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+<li><strong>mv的应用</strong><br>1.<code>mv make demo</code>就是将make文件改名为demo<br>2.<code>mv make/ demo</code>就是将make放入demo（demo前有空格）</li>
+<li><strong>touch的应用</strong><br>1.<code>touch</code>可以在当前文件夹创建一个文件如 <code>touch make</code>;<br>2.<code>touch</code>可以更新这个文件的访问时间，如已经有了一个make.html文件，你<code>touch make.html</code>一下，你再利用上面的ls内容进行查看</li>
+<li><strong>explainshell.com是命令行解释的工具</strong><br><img src="https://upload-images.jianshu.io/upload_images/11007474-ce54ca75ccdac46a.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"></li>
+</ul>
+<p>##命令行小技巧</p>
+<ul>
+<li><strong>技巧1:~/.bashrc</strong>(点击Git Bash直接进入默认文件)<br>1.首先 <code>touch ~/.bashrc</code> 创建一下这个文件<br>2.<code>start ~/.bashrc</code> 选用编辑器编辑这个文件，内容为 <code>echo &#39;Hi&#39;</code><br>3.你也可以用命令行编辑文件 <code>echo &quot;echo &#39;hi&#39;&quot; &gt;&gt; ~/.bashrc</code><br>4.关闭退出 Git Bash，然后打开 Git Bash，是不是看到了 <code>Hi</code>，这说明每次进入 Git Bash，就会优先运行 ~/.bashrc 里面的命令<br>5.重新编辑 ~/.bashrc，内容改为 <code>cd ~/Desktop</code>，重启 Git Bash，有没有发现默认就进入桌面目录了？</li>
+<li><p><strong>技巧2:alias</strong><br>1.在 ~/.bashrc 里新增一行 <code>alias f=&quot;echo &#39;frank is awesome&#39;&quot;</code>，等于号两边不能有空格<br>2.运行 <code>source ~/.bashrc</code>，作用是执行 ~/.bashrc<br>运行 <code>f</code>，就会看到 <code>frank is awesome</code><br>也就是说，现在 <code>f</code> 就是 <code>echo &#39;frank is awesome&#39;</code> 的缩写了，利用这个技巧，我们可以把很多常见的命令缩写一下，比如  </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"> alias la=&apos;ls -a&apos;</span><br><span class="line"> alias ll=&apos;ls -l&apos;</span><br><span class="line"> alias gst=&apos;git status -sb&apos;</span><br><span class="line"> alias ga=&apos;git add&apos;</span><br><span class="line"> alias ga.=&apos;git add .&apos;</span><br><span class="line"> alias gc=&apos;git commit&apos;</span><br><span class="line"> alias gc.=&apos;git commit .&apos;</span><br><span class="line">保存退出，然后运行 source ~/.bashrc</span><br><span class="line">这样一来，你的 Git 操作就会简单很多：</span><br><span class="line"> ga 1.txt</span><br><span class="line"> ga .</span><br><span class="line"> gc 1.txt</span><br><span class="line"> gc.</span><br><span class="line"> gst</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>设置环境变量<br>可以在 ~/.bashrc 里面设置一些环境变量，比如你可以在 ~/.bashrc 里面添加一行<br><code>export SASS_BINARY_SITE=&quot;https://npm.taobao.org/mirrors/node-sass&quot;</code><br>那么以后你安装 node-sass 的时候就不会因为被墙而报错了。</p>
+<h1 id="续更"><a href="#续更" class="headerlink" title="续更"></a>续更</h1><p>查看文件夹内文件信息时出现桌面文件信息<br>出现： <img src="https://upload-images.jianshu.io/upload_images/11007474-42c7c5bbca6717a4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"><br>输入下列秘籍代码便可解决：<br><code>rm -rf ~/.git</code><br>此时再查看有可能出现以下代码：<br><code>Not a git repository (or any of the parent directories): .git</code><br>这是由于用git的地方还没有创建repository，此时你需要<code>git init</code>一下就OK了。</p>
+</li>
+</ul>
+<p><em>over</em></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/20/三-VSCode安装及配置/" rel="next" title="三.VSCode安装及配置">
+                <i class="fa fa-chevron-left"></i> 三.VSCode安装及配置
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/03/20/五-Git-GitHub的使用/" rel="prev" title="五.Git+GitHub的使用">
+                五.Git+GitHub的使用 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wang hang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">11</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#续更"><span class="nav-number">1.</span> <span class="nav-text">续更</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang hang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
