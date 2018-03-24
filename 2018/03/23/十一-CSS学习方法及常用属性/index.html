@@ -87,7 +87,7 @@
 <meta property="og:description" content="1.CSS的历史（Cascading Style Sheets 层叠样式表） 维基百科  2.CSS学习资源 Google: 关键词 MDN CSS Tricks Google: 阮一峰 css 张鑫旭的 240 多篇 CSS 博客 Codrops 炫酷 CSS 效果 CSS揭秘 CSS 2.1 中文 spec Magic of CSS 免费在线书3.引入CSS的四种方式 内联（style）样式">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-67cc62100fae52c2.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-d353a6c93f34c1a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-22T16:49:11.898Z">
+<meta property="og:updated_time" content="2018-03-24T14:18:43.707Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="十一.CSS学习方法及常用属性">
 <meta name="twitter:description" content="1.CSS的历史（Cascading Style Sheets 层叠样式表） 维基百科  2.CSS学习资源 Google: 关键词 MDN CSS Tricks Google: 阮一峰 css 张鑫旭的 240 多篇 CSS 博客 Codrops 炫酷 CSS 效果 CSS揭秘 CSS 2.1 中文 spec Magic of CSS 免费在线书3.引入CSS的四种方式 内联（style）样式">
@@ -317,7 +317,9 @@
 <li>内联（style）样式</li>
 <li>style标签方法</li>
 <li>link rel（relationship 关系）外部引入</li>
-<li>利用@import url 外部CSS再引入CSS<br><img src="https://upload-images.jianshu.io/upload_images/11007474-d353a6c93f34c1a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"><h3 id="4-常见的CSS属性"><a href="#4-常见的CSS属性" class="headerlink" title="4.常见的CSS属性"></a>4.常见的CSS属性</h3></li>
+<li>利用@import url 外部CSS再引入CSS<br><img src="https://upload-images.jianshu.io/upload_images/11007474-d353a6c93f34c1a6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></li>
+</ul>
+<h3 id="4-常见的CSS属性"><a href="#4-常见的CSS属性" class="headerlink" title="4.常见的CSS属性"></a>4.常见的CSS属性</h3><ul>
 <li><p>常见的块级元素和行内元素：<br>块级元素：h/p/div/hr/form/ui/ol/li/dl/dt/dd/pre/table/tr/td/th<br>行内元素：em/strong/span/a/br/img/buttom/input/label/select/textarea/code/script</p>
 </li>
 <li><p>如何分别让块级元素和行内元素水平居中<br>对于块级元素<br>通过设置width:0px; margin： 0px auto;即可实现水平居中<br>对于行内元素<br>通过设置在其父元素下设置text-align:center;即可该行内元素实现水平居中<br>块级元素和行内元素的特性：<br>块级元素会占用一整行，其他块级元素会被挤下到另一行，而行内元素之间可以在同一行存在<br>块级元素可以设计长宽，而行内元素无法设置长宽<br>行内元素设置margin和padding时只有左右有效，上下无效<br>块级元素可以包含行内元素和块级元素，行内元素只能包含行内元素和文本</p>
@@ -326,13 +328,27 @@
 <h3 id="5-继承"><a href="#5-继承" class="headerlink" title="5.继承"></a>5.继承</h3><p>继承是依赖于父子关系的一种机制。对于某个样式应用于某个父元素时，子元素如果不做特别的限制，子元素会继承父元素的一些样式</p>
 <ul>
 <li>无继承性的属性<br>1、display：规定元素应该生成的框的类型<br>2、文本属性：<br>vertical-align：垂直文本对齐<br>text-decoration：规定添加到文本的装饰<br>text-shadow：文本阴影效果<br>white-space：空白符的处理<br>unicode-bidi：设置文本的方向<br>3、盒子模型的属性<br>4、背景属性<br>5、定位属性：float、clear、position、top、right、bottom、left、min-width、min-height、max-width、max-height、overflow、clip、z-index<br>6、生成内容属性：content、counter-reset、counter-increment<br>7、轮廓样式属性：outline-style、outline-width、outline-color、outline<br>8、页面样式属性：size、page-break-before、page-break-after<br>9、声音样式属性：pause-before、pause-after、pause、cue-before、cue-after、cue、play-during</li>
-<li>可以继承属性<br>1、字体系列属性<br>font：组合字体<br>font-family：规定元素的字体系列<br>font-weight：设置字体的粗细<br>font-size：设置字体的尺寸<br>font-style：定义字体的风格<br>font-variant：设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。<br>font-stretch：对当前的 font-family 进行伸缩变形。所有主流浏览器都不支持。<br>font-size-adjust：为某个元素规定一个 aspect 值，这样就可以保持首选字体的 x-height。<br>2、文本系列属性<br>text-indent：文本缩进<br>text-align：文本水平对齐<br>line-height：行高<br>word-spacing：增加或减少单词间的空白（即字间隔）<br>letter-spacing：增加或减少字符间的空白（字符间距）<br>text-transform：控制文本大小写<br>direction：规定文本的书写方向<br>color：文本颜色<br>3、元素可见性：visibility<br>4、表格布局属性：caption-side、border-collapse、border-spacing、empty-cells、table-layout<br>5、列表布局属性：list-style-type、list-style-image、list-style-position、list-style<br>6、生成内容属性：quotes<br>7、光标属性：cursor<br>8、页面样式属性：page、page-break-inside、windows、orphans<br>9、声音样式属性：speak、speak-punctuation、speak-numeral、speak-header、speech-rate、volume、voice-family、pitch、pitch-range、stress、richness、、azimuth、elevation<h3 id="6-div"><a href="#6-div" class="headerlink" title="6.div"></a>6.div</h3></li>
-<li>div的高度及流动<br>文档流：就是文档内元素的流动方向<br>内联元素：从左往右流动<br>块级元素：独占一行，从上往下流动<br>块级元素的高度由内部文档流元素的高度决定<br>特殊单词较长的情况 需要word break：break-all； 才会被打断换行<br>行高字体默认有一个建议行高，不同的字体建议行高不同<h3 id="7-background"><a href="#7-background" class="headerlink" title="7.background"></a>7.background</h3></li>
+<li>可以继承属性<br>1、字体系列属性<br>font：组合字体<br>font-family：规定元素的字体系列<br>font-weight：设置字体的粗细<br>font-size：设置字体的尺寸<br>font-style：定义字体的风格<br>font-variant：设置小型大写字母的字体显示文本，这意味着所有的小写字母均会被转换为大写，但是所有使用小型大写字体的字母与其余文本相比，其字体尺寸更小。<br>font-stretch：对当前的 font-family 进行伸缩变形。所有主流浏览器都不支持。<br>font-size-adjust：为某个元素规定一个 aspect 值，这样就可以保持首选字体的 x-height。<br>2、文本系列属性<br>text-indent：文本缩进<br>text-align：文本水平对齐<br>line-height：行高<br>word-spacing：增加或减少单词间的空白（即字间隔）<br>letter-spacing：增加或减少字符间的空白（字符间距）<br>text-transform：控制文本大小写<br>direction：规定文本的书写方向<br>color：文本颜色<br>3、元素可见性：visibility<br>4、表格布局属性：caption-side、border-collapse、border-spacing、empty-cells、table-layout<br>5、列表布局属性：list-style-type、list-style-image、list-style-position、list-style<br>6、生成内容属性：quotes<br>7、光标属性：cursor<br>8、页面样式属性：page、page-break-inside、windows、orphans<br>9、声音样式属性：speak、speak-punctuation、speak-numeral、speak-header、speech-rate、volume、voice-family、pitch、pitch-range、stress、richness、、azimuth、elevation</li>
+</ul>
+<h3 id="6-div"><a href="#6-div" class="headerlink" title="6.div"></a>6.div</h3><ul>
+<li>div的高度及流动<br>文档流：就是文档内元素的流动方向<br>内联元素：从左往右流动<br>块级元素：独占一行，从上往下流动<br>块级元素的高度由内部文档流元素的高度决定<br>特殊单词较长的情况 需要word break：break-all； 才会被打断换行<br>行高字体默认有一个建议行高，不同的字体建议行高不同</li>
+</ul>
+<h3 id="7-background"><a href="#7-background" class="headerlink" title="7.background"></a>7.background</h3><ul>
 <li>background-size: 设置背景图片大小<br>contain 或 cover:<br>保留固有比例，最大的包含或覆盖背景区。如果图像没有固有比例，则按背景区大小<br>加auto<br>以背景图片的比例缩放背景图片，最好不要只用一个auto</li>
 <li>background-position 指定背景图片的初始位置</li>
 <li>position 指定一个元素在文档中的定位方式<br><strong>定位元素（positioned element）</strong>是其<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>relative</code>, <code>absolute</code>, <code>fixed</code>或 <code>sticky</code> 的一个元素。<br><strong>相对定位元素（</strong>relatively positioned element<strong>）</strong>是<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>relative</code>的元素。<br><strong>绝对定位元素（absolutely positioned element）</strong>是<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>absolute</code> 或 <code>fixed</code> 的元素。<br><strong>粘性定位元素</strong>（<strong>stickily positioned element</strong>）**是<a href="https://developer.mozilla.org/zh-CN/docs/Web/CSS/computed_value" target="_blank" rel="noopener">计算后</a>位置属性为 <code>sticky</code> 的元素</li>
 <li>max-width 最大宽度</li>
 </ul>
+<h3 id="8-display的几个常用属性"><a href="#8-display的几个常用属性" class="headerlink" title="8.display的几个常用属性"></a>8.display的几个常用属性</h3><ul>
+<li><code>none</code> 关闭一个元素的显示（对布局没有影响）；其所有后代元素都也被会被关闭显示。文档渲染时，该元素如同不存在要想让元素在隐藏的同时占据其原有的位置</li>
+<li><code>inline</code>  该元素生成一个或多个行内元素盒。</li>
+<li><code>block</code>  该元素生成一个块元素盒。 </li>
+<li><code>list-item</code> 该元素生成一个容纳内容和单独的列表行内元素盒的块状盒。 </li>
+<li><code>inline-block</code>该元素生成一个块状盒，该块状盒随着周围内容流动，如同它是一个单独的行内盒子（表现更像是一个被替换的元素）<br><strong>加了dinline-block后一般都要在加一个vertical-align：top；来清除bug</strong><h3 id="9-伪类"><a href="#9-伪类" class="headerlink" title="9.伪类"></a>9.伪类</h3></li>
+<li>:nth-child(an+b) 匹配文档树中在其之前具有 an+b-1 个兄弟节点的元素，其中 n 为正值或零值<br>0n+3 或简单的 3 匹配第三个元素。<br>1n+0 或简单的 n 匹配每个元素。（兼容性提醒：在 Android 浏览器 4.3 以下的版本 n 和 1n 的匹配方式不一致。1n 和 1n+0 是一致的，可根据喜好任选其一来使用。）<br>2n+0 或简单的 2n 匹配位置为 2、4、6、8…的元素。你可以使用关键字 even 来替换此表达式。<br>2n+1 匹配位置为 1、3、5、7…的元素。你可以使用关键字 odd 来替换此表达式。<br>3n+4 匹配位置为 4、7、10、13…的元素。<br>：一个冒号是伪类<br>：：两个冒号是伪元素</li>
+</ul>
+<hr>
+<p><strong>单词</strong><br><code>transition：box-shadow 1s；</code>过度效果 给谁添加 过程1S<br>protfolio 作品集<br>box-sizing: border-box; 使这个盒子的宽度包含margin和padding</p>
 
       
     </div>
@@ -488,7 +504,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS的历史（Cascading-Style-Sheets-层叠样式表）"><span class="nav-number">1.</span> <span class="nav-text">1.CSS的历史（Cascading Style Sheets 层叠样式表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CSS学习资源"><span class="nav-number">2.</span> <span class="nav-text">2.CSS学习资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引入CSS的四种方式"><span class="nav-number">3.</span> <span class="nav-text">3.引入CSS的四种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-常见的CSS属性"><span class="nav-number">4.</span> <span class="nav-text">4.常见的CSS属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-继承"><span class="nav-number">5.</span> <span class="nav-text">5.继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-div"><span class="nav-number">6.</span> <span class="nav-text">6.div</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-background"><span class="nav-number">7.</span> <span class="nav-text">7.background</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-CSS的历史（Cascading-Style-Sheets-层叠样式表）"><span class="nav-number">1.</span> <span class="nav-text">1.CSS的历史（Cascading Style Sheets 层叠样式表）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-CSS学习资源"><span class="nav-number">2.</span> <span class="nav-text">2.CSS学习资源</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-引入CSS的四种方式"><span class="nav-number">3.</span> <span class="nav-text">3.引入CSS的四种方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-常见的CSS属性"><span class="nav-number">4.</span> <span class="nav-text">4.常见的CSS属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-继承"><span class="nav-number">5.</span> <span class="nav-text">5.继承</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-div"><span class="nav-number">6.</span> <span class="nav-text">6.div</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-background"><span class="nav-number">7.</span> <span class="nav-text">7.background</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#8-display的几个常用属性"><span class="nav-number">8.</span> <span class="nav-text">8.display的几个常用属性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#9-伪类"><span class="nav-number">9.</span> <span class="nav-text">9.伪类</span></a></li></ol></div>
             
 
           </div>
