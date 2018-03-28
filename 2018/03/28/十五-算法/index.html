@@ -1,0 +1,673 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：输入：一个算法必须有零个或以上输入量。输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指">
+<meta property="og:type" content="article">
+<meta property="og:title" content="十五.算法">
+<meta property="og:url" content="http://yoursite.com/2018/03/28/十五-算法/index.html">
+<meta property="og:site_name" content="From&#39;s blog">
+<meta property="og:description" content="以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：输入：一个算法必须有零个或以上输入量。输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-2d70c10c60798157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
+<meta property="og:updated_time" content="2018-03-28T08:31:59.280Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="十五.算法">
+<meta name="twitter:description" content="以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：输入：一个算法必须有零个或以上输入量。输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-2d70c10c60798157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/03/28/十五-算法/"/>
+
+
+
+
+
+  <title>十五.算法 | From's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">From's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/28/十五-算法/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang hang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="From's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">十五.算法</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-28T16:31:31+08:00">
+                2018-03-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p><strong>以下是高德纳在他的著作《计算机程序设计艺术》里对算法的特征归纳：</strong><br>输入：一个算法必须有零个或以上输入量。<br>输出：一个算法应有一个或以上输出量，输出量是算法计算的结果。<br>明确性：算法的描述必须无歧义，以保证算法的实际执行结果是精确地匹配要求或期望，通常要求实际运行结果是确定的。<br>有限性：依据图灵的定义，一个算法是能够被任何图灵完备系统模拟的一串运算，而图灵机只有有限个状态、有限个输入符号和有限个转移函数（指令）。而一些定义更规定算法必须在有限个步骤内完成任务。<br>有效性：又称可行性。能够实现，算法中描述的操作都是可以通过已经实现的基本运算执行有限次来实现。</p>
+<h3 id="1-什么是排序算法（Sorting-algorithm）"><a href="#1-什么是排序算法（Sorting-algorithm）" class="headerlink" title="1.什么是排序算法（Sorting algorithm）"></a>1.什么是排序算法（Sorting algorithm）</h3><p>一种能将一串数据依照特定排序方式进行排列的一种算法。<br>常用的排序方式是数值顺序和字典排序。<br>排序算法的输出必须遵守下列两个原则：<br>1.输出结果为递增序列。（递增是针对所需的排序顺序而言）<br>2.输出结果是原输入的一种排列、或是重组。</p>
+<h3 id="2-常见排序算法-冒泡排序-体育委员两两摸头法-（Bubble-Sort）"><a href="#2-常见排序算法-冒泡排序-体育委员两两摸头法-（Bubble-Sort）" class="headerlink" title="2.常见排序算法 - 冒泡排序:体育委员两两摸头法 （Bubble Sort）"></a>2.常见排序算法 - 冒泡排序:体育委员两两摸头法 （Bubble Sort）</h3><p>冒泡排序是一种简单的排序算法。它重复地走访过要排序的数列，一次比较两个元素，如果他们的顺序错误就把他们交换过来。走访数列的工作是重复地进行直到没有再需要交换，也就是说该数列已经排序完成。这个算法的名字由来是因为越小的元素会经由交换慢慢“浮”到数列的顶端。<br>冒泡排序算法的流程如下：<br>1.比较相邻的元素。如果第一个比第二个大，就交换他们两个。<br>2.对每一对相邻元素作同样的工作，从开始第一对到结尾的最后一对。在这一点，最后的元素应该会是最大的数。<br>3.针对所有的元素重复以上的步骤，除了最后一个。<br>4.持续每次对越来越少的元素重复上面的步骤，直到没有任何一对数字需要比较。</p>
+<h3 id="3-插入排序-起扑克牌法-Insertion-Sort"><a href="#3-插入排序-起扑克牌法-Insertion-Sort" class="headerlink" title="3.插入排序 :起扑克牌法(Insertion Sort)"></a>3.插入排序 :起扑克牌法(Insertion Sort)</h3><p>设有一组关键字｛K1， K2，…， Kn｝；排序开始就认为 K1 是一个有序序列；让 K2 插入上述表长为 1 的有序序列，使之成为一个表长为 2 的有序序列；然后让 K3 插入上述表长为 2 的有序序列，使之成为一个表长为 3 的有序序列；依次类推，最后让 Kn 插入上述表长为 n-1 的有序序列，得一个表长为 n 的有序序列。<br>具体算法描述如下：<br>1.从第一个元素开始，该元素可以认为已经被排序<br>2.取出下一个元素，在已经排序的元素序列中从后向前扫描<br>3.如果该元素（已排序）大于新元素，将该元素移到下一位置<br>4.重复步骤 3，直到找到已排序的元素小于或者等于新元素的位置<br>5.将新元素插入到该位置后<br>6.重复步骤 2~5<br>如果比较操作的代价比交换操作大的话，可以采用<a href="http://zh.wikipedia.org/wiki/%E4%BA%8C%E5%88%86%E6%9F%A5%E6%89%BE%E6%B3%95" target="_blank" rel="noopener">二分查找法</a>来减少比较操作的数目。该算法可以认为是插入排序的一个变种，称为<strong>二分查找排序</strong>。<br>二分查找法，是一种在有序数组中查找某一特定元素的搜索算法。搜素过程从数组的中间元素开始，如果中间元素正好是要查找的元素，则搜素过程结束；如果某一特定元素大于或者小于中间元素，则在数组大于或小于中间元素的那一半中查找，而且跟开始一样从中间元素开始比较。如果在某一步骤数组为空，则代表找不到。这种搜索算法每一次比较都使搜索范围缩小一半。</p>
+<h3 id="4-桶排序-强迫症收扑克牌法-Bucket-Sort"><a href="#4-桶排序-强迫症收扑克牌法-Bucket-Sort" class="headerlink" title="4.桶排序:强迫症收扑克牌法 (Bucket Sort)"></a>4.桶排序:强迫症收扑克牌法 (Bucket Sort)</h3><p>也叫箱排序，原理是将数组分到有限数量的桶子里，然后对每个桶子再分别排序（有可能再使用别的排序算法或是以递归方式继续使用桶排序进行排序），最后将各个桶中的数据有序的合并起来。<br>排序过程：<br>1.假设待排序的一组数统一的分布在一个范围中，并将这一范围划分成几个子范围，也就是桶<br>2.将待排序的一组数，分档规入这些子桶，并将桶中的数据进行排序<br>3.将各个桶中的数据有序的合并起来<br><a href="http://www.cs.usfca.edu/~galles/visualization/BucketSort.html" target="_blank" rel="noopener">Data Structure Visualizations</a> 提供了一个桶排序的分步动画演示<br>桶可多可少，要么要速度要么要内存</p>
+<h3 id="5-选择排序-体育老师一指禅法（Selection-sort）"><a href="#5-选择排序-体育老师一指禅法（Selection-sort）" class="headerlink" title="5.选择排序:体育老师一指禅法（Selection sort）"></a>5.选择排序:体育老师一指禅法（Selection sort）</h3><p>选择排序（Selection Sort）是一种简单直观的排序算法。它的工作原理如下，首先在未排序序列中找到最小（大）元素，存放到排序序列的起始位置，然后，再从剩余未排序元素中继续寻找最小（大）元素，然后放到已排序序列的末尾。以此类推，直到所有元素均排序完毕。<br>选择排序的主要优点与数据移动有关。如果某个元素位于正确的最终位置上，则它不会被移动。选择排序每次交换一对元素，它们当中至少有一个将被移到其最终位置上，因此对n个元素的序列进行排序总共进行至多n-1次交换。在所有的完全依靠交换去移动元素的排序方法中，选择排序属于非常好的一种。<br><a href="http://bubkoo.qiniudn.com/selection_sort_animation.gif" target="_blank" rel="noopener">图像演示</a><br><img src="https://upload-images.jianshu.io/upload_images/11007474-2d70c10c60798157.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/500" alt="image.png"></p>
+<h3 id="6-计数排序"><a href="#6-计数排序" class="headerlink" title="6.计数排序"></a>6.计数排序</h3><p>无法统计负数和小数，但是他比快排还要快，需要一个hash，计数排序对于数据范围很大的数组，需要大量时间和内存，适用性不高。</p>
+<h3 id="7-基数排序"><a href="#7-基数排序" class="headerlink" title="7.基数排序"></a>7.基数排序</h3><p>固定10个桶，从0~9，依次从个位进行排序，之后百位，以此类推，排的次数与最大数的位数相同。</p>
+<p>体育委员两两摸头法（冒泡排序）<br>体育老师一指禅法（选择排序）<br>起扑克牌法（插入排序）<br>强迫症收扑克牌法（基数排序）<br>快排<br>归并排序<br>堆排序</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/03/27/十四-了解伪代码/" rel="next" title="十四.了解伪代码">
+                <i class="fa fa-chevron-left"></i> 十四.了解伪代码
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wang hang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">16</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">1</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-什么是排序算法（Sorting-algorithm）"><span class="nav-number">1.</span> <span class="nav-text">1.什么是排序算法（Sorting algorithm）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-常见排序算法-冒泡排序-体育委员两两摸头法-（Bubble-Sort）"><span class="nav-number">2.</span> <span class="nav-text">2.常见排序算法 - 冒泡排序:体育委员两两摸头法 （Bubble Sort）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-插入排序-起扑克牌法-Insertion-Sort"><span class="nav-number">3.</span> <span class="nav-text">3.插入排序 :起扑克牌法(Insertion Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-桶排序-强迫症收扑克牌法-Bucket-Sort"><span class="nav-number">4.</span> <span class="nav-text">4.桶排序:强迫症收扑克牌法 (Bucket Sort)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5-选择排序-体育老师一指禅法（Selection-sort）"><span class="nav-number">5.</span> <span class="nav-text">5.选择排序:体育老师一指禅法（Selection sort）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6-计数排序"><span class="nav-number">6.</span> <span class="nav-text">6.计数排序</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#7-基数排序"><span class="nav-number">7.</span> <span class="nav-text">7.基数排序</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang hang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
