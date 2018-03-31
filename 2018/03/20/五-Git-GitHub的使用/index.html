@@ -81,7 +81,7 @@
 
 <meta name="description" content="1.本地创建仓库： 首先进行初始化1.在桌面创建mkdir 仓库名2.进入这个仓库cd make（在这里假设这个仓库名为make）3.首先我们要初始化这个仓库，输入：git init 这是我们可以在make里看到一个.git的文件4.现在我们创建一个html文件touch from.html（运行git status -sb查看文件状态，现在的mmm.html前面有？？问号）5.然后我们先要把这个">
 <meta property="og:type" content="article">
-<meta property="og:title" content="五.Git+GitHub的使用">
+<meta property="og:title" content="Git+GitHub的使用">
 <meta property="og:url" content="http://yoursite.com/2018/03/20/五-Git-GitHub的使用/index.html">
 <meta property="og:site_name" content="From&#39;s blog">
 <meta property="og:description" content="1.本地创建仓库： 首先进行初始化1.在桌面创建mkdir 仓库名2.进入这个仓库cd make（在这里假设这个仓库名为make）3.首先我们要初始化这个仓库，输入：git init 这是我们可以在make里看到一个.git的文件4.现在我们创建一个html文件touch from.html（运行git status -sb查看文件状态，现在的mmm.html前面有？？问号）5.然后我们先要把这个">
@@ -91,9 +91,9 @@
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-60a48248d118f921.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-585fd7e9f3b225aa.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
 <meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-a567bbde6837bb53.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
-<meta property="og:updated_time" content="2018-03-21T04:20:15.370Z">
+<meta property="og:updated_time" content="2018-03-31T13:21:18.745Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="五.Git+GitHub的使用">
+<meta name="twitter:title" content="Git+GitHub的使用">
 <meta name="twitter:description" content="1.本地创建仓库： 首先进行初始化1.在桌面创建mkdir 仓库名2.进入这个仓库cd make（在这里假设这个仓库名为make）3.首先我们要初始化这个仓库，输入：git init 这是我们可以在make里看到一个.git的文件4.现在我们创建一个html文件touch from.html（运行git status -sb查看文件状态，现在的mmm.html前面有？？问号）5.然后我们先要把这个">
 <meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-c10d1686a0c533a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
 
@@ -131,7 +131,7 @@
 
 
 
-  <title>五.Git+GitHub的使用 | From's blog</title>
+  <title>Git+GitHub的使用 | From's blog</title>
   
 
 
@@ -255,7 +255,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">五.Git+GitHub的使用</h1>
+          <h1 class="post-title" itemprop="name headline">Git+GitHub的使用</h1>
         
 
         <div class="post-meta">
@@ -306,9 +306,13 @@
 
       
         <h1 id="1-本地创建仓库："><a href="#1-本地创建仓库：" class="headerlink" title="1.本地创建仓库："></a>1.本地创建仓库：</h1><ul>
-<li><strong>首先进行初始化</strong><br>1.在桌面创建<code>mkdir 仓库名</code><br>2.进入这个仓库<code>cd make</code>（在这里假设这个仓库名为make）<br>3.首先我们要初始化这个仓库，输入：<code>git init</code> 这是我们可以在make里看到一个.git的文件<br>4.现在我们创建一个html文件<code>touch from.html</code>（运行<code>git status -sb</code>查看文件状态，现在的mmm.html前面有？？问号）<br>5.然后我们先要把这个文件<code>git add mmm.html</code>添加到暂存区（现在我们再<code>git status -sb</code>查看一下文件状态，此时前面应该是 A，也就是我要把这些文件添加到仓库里去）<br>6.接下来我们<code>git commit -m &quot;文件信息&quot;</code>（将这个文件正式的提交至本地仓库）<br>7.你使用 <code>git log</code> 就可以看到历史上的变动<br>完成以上步骤，本地的仓库就创建完成了。<h1 id="2-将本地仓库上传至GitHub"><a href="#2-将本地仓库上传至GitHub" class="headerlink" title="2.将本地仓库上传至GitHub"></a>2.将本地仓库上传至GitHub</h1></li>
+<li><strong>首先进行初始化</strong><br>1.在桌面创建<code>mkdir 仓库名</code><br>2.进入这个仓库<code>cd make</code>（在这里假设这个仓库名为make）<br>3.首先我们要初始化这个仓库，输入：<code>git init</code> 这是我们可以在make里看到一个.git的文件<br>4.现在我们创建一个html文件<code>touch from.html</code>（运行<code>git status -sb</code>查看文件状态，现在的mmm.html前面有？？问号）<br>5.然后我们先要把这个文件<code>git add mmm.html</code>添加到暂存区（现在我们再<code>git status -sb</code>查看一下文件状态，此时前面应该是 A，也就是我要把这些文件添加到仓库里去）<br>6.接下来我们<code>git commit -m &quot;文件信息&quot;</code>（将这个文件正式的提交至本地仓库）<br>7.你使用 <code>git log</code> 就可以看到历史上的变动<br>完成以上步骤，本地的仓库就创建完成了。</li>
+</ul>
+<h1 id="2-将本地仓库上传至GitHub"><a href="#2-将本地仓库上传至GitHub" class="headerlink" title="2.将本地仓库上传至GitHub"></a>2.将本地仓库上传至GitHub</h1><ul>
 <li>在GitHub上创建一个空仓库<br><img src="https://upload-images.jianshu.io/upload_images/11007474-c10d1686a0c533a0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"><br><strong><em>除了名字其他一律不填</em></strong></li>
-<li>然后在Git中之前创建的仓库中运行如图画圈的两行命令（建议选择SSH地址）<br><img src="https://upload-images.jianshu.io/upload_images/11007474-04628131fe9d66a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="image.png"><br>然后刷新当前页面，你的仓库就上传到 GitHub 了！神不神奇？激不激动？<h1 id="3-下载-GitHub-上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）"><a href="#3-下载-GitHub-上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）" class="headerlink" title="3. 下载 GitHub 上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）"></a>3. <strong>下载 GitHub 上的仓库到本地</strong>（刚开始建库在GitHub，然后下载，觉得这个好用）</h1></li>
+<li>然后在Git中之前创建的仓库中运行如图画圈的两行命令（建议选择SSH地址）<br><img src="https://upload-images.jianshu.io/upload_images/11007474-04628131fe9d66a8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/640" alt="image.png"><br>然后刷新当前页面，你的仓库就上传到 GitHub 了！神不神奇？激不激动？</li>
+</ul>
+<h1 id="3-下载-GitHub-上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）"><a href="#3-下载-GitHub-上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）" class="headerlink" title="3. 下载 GitHub 上的仓库到本地（刚开始建库在GitHub，然后下载，觉得这个好用）"></a>3. <strong>下载 GitHub 上的仓库到本地</strong>（刚开始建库在GitHub，然后下载，觉得这个好用）</h1><ul>
 <li>创建及下载步骤<br><img src="https://upload-images.jianshu.io/upload_images/11007474-fc1fef603a4eba97.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"><br>然后在这里获得下载链接（最好选择SSH下载地址）<br><img src="https://upload-images.jianshu.io/upload_images/11007474-60a48248d118f921.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"></li>
 </ul>
 <p>1.git clone <a href="mailto:git@github.com" target="_blank" rel="noopener">git@github.com</a>:xxxx，下载仓库<br>2.git init，初始化本地仓库 .git<br>3.git status -sb，显示当前所有文件的状态<br>4.git add 文件路径，用来将变动加到暂存区<br>5.git commit -m “信息”，用来正式提交变动，提交至 .git 仓库<br>如果有新的变动，我们只需要依次执行 git add xxx 和 git commit -m ‘xxx’ 两个命令即可。<br><strong>先 add 再 commit，行了，你学会 git 了。</strong><br>6.git log 查看变更历史。</p>
@@ -343,8 +347,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/20/四-命令行基础/" rel="next" title="四.命令行基础">
-                <i class="fa fa-chevron-left"></i> 四.命令行基础
+              <a href="/2018/03/20/四-命令行基础/" rel="next" title="命令行基础">
+                <i class="fa fa-chevron-left"></i> 命令行基础
               </a>
             
           </div>
@@ -353,8 +357,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/20/六-计算机如何存储数据及编码的进化/" rel="prev" title="六.计算机如何存储数据及编码的进化">
-                六.计算机如何存储数据及编码的进化 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/20/六-计算机如何存储数据及编码的进化/" rel="prev" title="计算机如何存储数据及编码的进化">
+                计算机如何存储数据及编码的进化 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
