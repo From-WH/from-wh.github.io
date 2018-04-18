@@ -79,19 +79,20 @@
 
 
 
-<meta name="description" content="1.计算机是如何存储数据的 计算机只能存0和1，那么他就可以存2进制的所有数字存0~9，把10进制转为2进制ASCII表存英文GBK（微软出国家标准扩展，GB2312中国出） 汉字库Unicode 包含所有字符utf-8 优化Unicode，节省空间墨菲定律：小概率必发生  2.命令行 3.HTTP请求与响应123456789101112131415161718192021222324252627">
+<meta name="description" content="进制转换 二进制与十进制     人类（10进制） 猫咪（2进制）     1 1   2 10   3 11   4 100    算法：例子1例子2：例子3（小数） 0.1（10进制）无法转化为（2二进制）因为0.1在十进制是有限小数二进制中是无限小数 转换进制有可能将有限小数转换为无限小数  二进制与十六进制    十进制 ——&amp;gt; 二进制23（10）——&amp;gt; 10111（2）0.2">
 <meta property="og:type" content="article">
-<meta property="og:title" content="入门知识回顾小结">
-<meta property="og:url" content="http://yoursite.com/2018/03/26/十三-入门知识回顾小结/index.html">
+<meta property="og:title" content="进制转换">
+<meta property="og:url" content="http://yoursite.com/2018/03/20/二.进制转换/index.html">
 <meta property="og:site_name" content="From&#39;s blog">
-<meta property="og:description" content="1.计算机是如何存储数据的 计算机只能存0和1，那么他就可以存2进制的所有数字存0~9，把10进制转为2进制ASCII表存英文GBK（微软出国家标准扩展，GB2312中国出） 汉字库Unicode 包含所有字符utf-8 优化Unicode，节省空间墨菲定律：小概率必发生  2.命令行 3.HTTP请求与响应123456789101112131415161718192021222324252627">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-5d1821fa19b68dcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-0a1893befe0a3a75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
-<meta property="og:updated_time" content="2018-03-31T13:22:34.915Z">
+<meta property="og:description" content="进制转换 二进制与十进制     人类（10进制） 猫咪（2进制）     1 1   2 10   3 11   4 100    算法：例子1例子2：例子3（小数） 0.1（10进制）无法转化为（2二进制）因为0.1在十进制是有限小数二进制中是无限小数 转换进制有可能将有限小数转换为无限小数  二进制与十六进制    十进制 ——&amp;gt; 二进制23（10）——&amp;gt; 10111（2）0.2">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-c12d1e39b26d37e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-8b6c260cd8b3aa5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-b1bfdb5c690d257f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta property="og:updated_time" content="2018-03-31T13:20:31.483Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="入门知识回顾小结">
-<meta name="twitter:description" content="1.计算机是如何存储数据的 计算机只能存0和1，那么他就可以存2进制的所有数字存0~9，把10进制转为2进制ASCII表存英文GBK（微软出国家标准扩展，GB2312中国出） 汉字库Unicode 包含所有字符utf-8 优化Unicode，节省空间墨菲定律：小概率必发生  2.命令行 3.HTTP请求与响应123456789101112131415161718192021222324252627">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-5d1821fa19b68dcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240">
+<meta name="twitter:title" content="进制转换">
+<meta name="twitter:description" content="进制转换 二进制与十进制     人类（10进制） 猫咪（2进制）     1 1   2 10   3 11   4 100    算法：例子1例子2：例子3（小数） 0.1（10进制）无法转化为（2二进制）因为0.1在十进制是有限小数二进制中是无限小数 转换进制有可能将有限小数转换为无限小数  二进制与十六进制    十进制 ——&amp;gt; 二进制23（10）——&amp;gt; 10111（2）0.2">
+<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-c12d1e39b26d37e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
 
 
 
@@ -121,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/26/十三-入门知识回顾小结/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/03/20/二.进制转换/"/>
 
 
 
 
 
-  <title>入门知识回顾小结 | From's blog</title>
+  <title>进制转换 | From's blog</title>
   
 
 
@@ -234,7 +235,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/26/十三-入门知识回顾小结/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/二.进制转换/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang hang">
@@ -251,7 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">入门知识回顾小结</h1>
+          <h1 class="post-title" itemprop="name headline">进制转换</h1>
         
 
         <div class="post-meta">
@@ -263,8 +264,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-26T11:25:01+08:00">
-                2018-03-26
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:12:43+08:00">
+                2018-03-20
               </time>
             
 
@@ -301,14 +302,44 @@
       
 
       
-        <h2 id="1-计算机是如何存储数据的"><a href="#1-计算机是如何存储数据的" class="headerlink" title="1.计算机是如何存储数据的"></a>1.计算机是如何存储数据的</h2><ul>
-<li>计算机只能存0和1，那么他就可以存2进制的所有数字<br>存0~9，把10进制转为2进制<br>ASCII表存英文<br>GBK（微软出国家标准扩展，GB2312中国出） 汉字库<br>Unicode 包含所有字符<br>utf-8 优化Unicode，节省空间<br>墨菲定律：小概率必发生</li>
+        <h1 id="进制转换"><a href="#进制转换" class="headerlink" title="进制转换"></a>进制转换</h1><ul>
+<li>二进制与十进制</li>
 </ul>
-<h2 id="2-命令行"><a href="#2-命令行" class="headerlink" title="2.命令行"></a>2.命令行</h2><p><img src="https://upload-images.jianshu.io/upload_images/11007474-5d1821fa19b68dcb.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
-<h2 id="3-HTTP请求与响应"><a href="#3-HTTP请求与响应" class="headerlink" title="3.HTTP请求与响应"></a>3.HTTP请求与响应</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line">GET /?w=1 HTTP/1.1</span><br><span class="line">Host: baidu.com</span><br><span class="line">Accept: text/html</span><br><span class="line"></span><br><span class="line">响应</span><br><span class="line"></span><br><span class="line">HTTP/1.1 200 OK</span><br><span class="line">Content-Type: text/html; charset=utf-8</span><br><span class="line">Content-Length: 10000</span><br><span class="line"></span><br><span class="line">&lt;!DOCTYPE&gt;</span><br><span class="line">&lt;html&gt;......&lt;/html&gt;</span><br><span class="line"></span><br><span class="line">POST 请求</span><br><span class="line"></span><br><span class="line">POST /login?w=1 HTTP/1.1</span><br><span class="line">Host: baidu.com</span><br><span class="line">Accept: application/ms-word</span><br><span class="line">Content-Type: application/x-www-form-urlencoded</span><br><span class="line">Content-Length: 10</span><br><span class="line"></span><br><span class="line">username=fangfang&amp;password=mima</span><br><span class="line"></span><br><span class="line">响应</span><br><span class="line"></span><br><span class="line">HTTP/1.1 403 Forbidden</span><br><span class="line">Content-Type: application/md-word</span><br><span class="line">Content-Length: 200</span><br><span class="line"></span><br><span class="line">word格式</span><br></pre></td></tr></table></figure>
-<p>比喻版请求与响应<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">工资请求</span><br><span class="line"></span><br><span class="line">GET 11月工资 工资协议/1.1</span><br><span class="line">Host: 百度公司</span><br><span class="line">Accept: 现金, 支付宝转账, 银行汇款</span><br><span class="line"></span><br><span class="line">工资响应</span><br><span class="line"></span><br><span class="line">工资协议/1.1 200 OK</span><br><span class="line">类型: 现金</span><br><span class="line">现金张数: 10</span><br><span class="line"></span><br><span class="line">100</span><br></pre></td></tr></table></figure></p>
-<p>请求头和文件没有半毛钱关系<br>协议的字符集权重是大于内容的字符集权重 ，意思就是前端和后台同时定义charset，听后端的</p>
-<h2 id="4-CSS"><a href="#4-CSS" class="headerlink" title="4.CSS"></a>4.CSS</h2><p>herf和src分别在什么时候用<br><img src="https://upload-images.jianshu.io/upload_images/11007474-0a1893befe0a3a75.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="image.png"></p>
+<table>
+<thead>
+<tr>
+<th>人类（10进制）</th>
+<th style="text-align:left">猫咪（2进制）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td style="text-align:left">1</td>
+</tr>
+<tr>
+<td>2</td>
+<td style="text-align:left">10</td>
+</tr>
+<tr>
+<td>3</td>
+<td style="text-align:left">11</td>
+</tr>
+<tr>
+<td>4</td>
+<td style="text-align:left">100</td>
+</tr>
+</tbody>
+</table>
+<p>算法：<br>例子1<br><img src="https://upload-images.jianshu.io/upload_images/11007474-c12d1e39b26d37e1.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"><br>例子2：<br><img src="https://upload-images.jianshu.io/upload_images/11007474-8b6c260cd8b3aa5e.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"><br>例子3（小数）<br><img src="https://upload-images.jianshu.io/upload_images/11007474-b1bfdb5c690d257f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"></p>
+<p>0.1（10进制）无法转化为（2二进制）<br><em>因为0.1在十进制是有限小数</em><br><em>二进制中是无限小数</em></p>
+<p><strong>转换进制有可能将有限小数转换为无限小数</strong></p>
+<ul>
+<li>二进制与十六进制  </li>
+</ul>
+<p>十进制 ——&gt; 二进制<br>23（10）——&gt; 10111（2）<br>0.25（10）——&gt; 0.01（2）</p>
+<p>二进制 ——&gt;十六进制，每四个二进制代表一个十六进制数<br>0001 ——&gt; 1，0010 ——&gt; 2，0011 ——&gt; 3，0100 ——&gt; 4，<br>0101 ——&gt; 5，0110 ——&gt; 6，0111 ——&gt; 7，1000 ——&gt; 8，<br>1001 ——&gt; 9，1010 ——&gt; A，1011 ——&gt; B，1100 ——&gt; C，<br>1101 ——&gt; D，1110 ——&gt; E，1111——&gt; F</p>
+<p>二进制 ——&gt; 十六进制<br>1001 0001（2）——&gt; 91（16）<br>1101 1011（2）——&gt; DB（16）<br>0001 1101 1011（2）——&gt; 1DB（16）</p>
 
       
     </div>
@@ -333,8 +364,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/25/十二-居中方法整理/" rel="next" title="居中方法整理">
-                <i class="fa fa-chevron-left"></i> 居中方法整理
+              <a href="/2018/03/20/一-自主学习过程中需要掌握的方法/" rel="next" title="自主学习过程中需要掌握的方法">
+                <i class="fa fa-chevron-left"></i> 自主学习过程中需要掌握的方法
               </a>
             
           </div>
@@ -343,8 +374,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/03/27/十四-了解伪代码/" rel="prev" title="了解伪代码">
-                了解伪代码 <i class="fa fa-chevron-right"></i>
+              <a href="/2018/03/20/三-VSCode安装及配置/" rel="prev" title="VSCode安装及配置">
+                VSCode安装及配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -468,7 +499,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-计算机是如何存储数据的"><span class="nav-number">1.</span> <span class="nav-text">1.计算机是如何存储数据的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-命令行"><span class="nav-number">2.</span> <span class="nav-text">2.命令行</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-HTTP请求与响应"><span class="nav-number">3.</span> <span class="nav-text">3.HTTP请求与响应</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-CSS"><span class="nav-number">4.</span> <span class="nav-text">4.CSS</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#进制转换"><span class="nav-number">1.</span> <span class="nav-text">进制转换</span></a></li></ol></div>
             
 
           </div>

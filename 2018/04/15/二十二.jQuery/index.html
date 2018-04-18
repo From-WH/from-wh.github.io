@@ -1,0 +1,693 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="jQuery," />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.封装函数封装是一种函数的功能，它把一个程序员写的一个或者多个功能通过函数、类的方式封装起来，对外只提供一个简单的函数接口。123456789let classes = &amp;#123; &amp;apos;a&amp;apos;: true, &amp;apos;b&amp;apos;: false, &amp;apos;c&amp;apos;: true &amp;#125;      for (let key in classes) &amp;#123;">
+<meta name="keywords" content="jQuery">
+<meta property="og:type" content="article">
+<meta property="og:title" content="jQuery">
+<meta property="og:url" content="http://yoursite.com/2018/04/15/二十二.jQuery/index.html">
+<meta property="og:site_name" content="From&#39;s blog">
+<meta property="og:description" content="1.封装函数封装是一种函数的功能，它把一个程序员写的一个或者多个功能通过函数、类的方式封装起来，对外只提供一个简单的函数接口。123456789let classes = &amp;#123; &amp;apos;a&amp;apos;: true, &amp;apos;b&amp;apos;: false, &amp;apos;c&amp;apos;: true &amp;#125;      for (let key in classes) &amp;#123;">
+<meta property="og:updated_time" content="2018-04-15T11:10:49.062Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="jQuery">
+<meta name="twitter:description" content="1.封装函数封装是一种函数的功能，它把一个程序员写的一个或者多个功能通过函数、类的方式封装起来，对外只提供一个简单的函数接口。123456789let classes = &amp;#123; &amp;apos;a&amp;apos;: true, &amp;apos;b&amp;apos;: false, &amp;apos;c&amp;apos;: true &amp;#125;      for (let key in classes) &amp;#123;">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/04/15/二十二.jQuery/"/>
+
+
+
+
+
+  <title>jQuery | From's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">From's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Startseite
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archiv
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/04/15/二十二.jQuery/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang hang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="From's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">jQuery</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Veröffentlicht am</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-04-15T18:43:19+08:00">
+                2018-04-15
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h4 id="1-封装"><a href="#1-封装" class="headerlink" title="1.封装"></a>1.封装</h4><p>函数封装是一种函数的功能，它把一个程序员写的一个或者多个功能通过函数、类的方式封装起来，对外只提供一个简单的函数接口。<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">let classes = &#123; &apos;a&apos;: true, &apos;b&apos;: false, &apos;c&apos;: true &#125;</span><br><span class="line">      for (let key in classes) &#123;</span><br><span class="line">       let value = classes[key]</span><br><span class="line">            if (value) &#123;</span><br><span class="line">               tim4.classList.add(key)</span><br><span class="line">            &#125; else &#123;</span><br><span class="line">               tim4.classList.remove(key)</span><br><span class="line">               &#125;</span><br><span class="line">      &#125;</span><br></pre></td></tr></table></figure></p>
+<p>封装后：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function addClass(node,classes) &#123;</span><br><span class="line">    for (let key in classes) &#123;</span><br><span class="line">        let value = classes[key]</span><br><span class="line">        if (value) &#123;</span><br><span class="line">            node.classList.add(key)</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            node.classList.remove(key)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">直接addClass（）就可以了</span><br></pre></td></tr></table></figure></p>
+<p>代码优化守则：<br>凡是看起来相似的代码就存在优化的可能</p>
+<p>obj.x()<br>ogj.<a href="">‘x’</a><br>上面两个相等</p>
+<h4 id="2-命名空间"><a href="#2-命名空间" class="headerlink" title="2.命名空间"></a>2.命名空间</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">window.wwNode = &#123;&#125;   //命名空间</span><br><span class="line">wwNode.xxx = xxx</span><br><span class="line">wwNode.addClass = addClass</span><br><span class="line"></span><br><span class="line">wwNode.xxx(tim4)</span><br></pre></td></tr></table></figure>
+<h4 id="3-this"><a href="#3-this" class="headerlink" title="3.this"></a>3.this</h4><p>this是call的第一个参数</p>
+<p>####4.jQuery<br>jQuery接受一个旧的节点，返回一个新的对象，这个对象就是jquery的对象<br>instanceof 运算符用来测试一个对象在其原型链中是否存在一个构造函数的 prototype 属性。</p>
+<h4 id="5-链式操作"><a href="#5-链式操作" class="headerlink" title="5.链式操作"></a>5.链式操作</h4><pre><code>.  .  . 懂了吧
+</code></pre><p>####6.jQuery的简单实用<br>jQuery 是一个 JavaScript 库<br>jQuery接受一个旧的节点，返回一个新的对象，新的对象有新的API，这个对象就是jQuery的对象<br>window.$ = jQuery<br>用全局变量$就相当于在用jQury<br>习俗：如果这个对象是$（jQuery）的就在对象前面加一个$，说明这是jQuery构造的，可以用jQuery的API</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function getSibilings(node) &#123;  //自己设计的API，getSibilings</span><br><span class="line">    var allChildren = node.parentNode.children  //获取这个元素的所有兄弟姐妹</span><br><span class="line">    var array = &#123; length: 0 &#125;                    </span><br><span class="line">    for (let i = 0; i &lt; allChildren.length; i++) &#123;      </span><br><span class="line">        if (allChildren[i] !== node) &#123;                </span><br><span class="line">            array[array.length] = allChildren[i]</span><br><span class="line">            array.length += 1                   </span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return array</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">新的接口 BetterNode </span><br><span class="line">window.jQuery = function (node) &#123;</span><br><span class="line">       return &#123;</span><br><span class="line">            allsiblings: function () &#123;</span><br><span class="line">               var allChildren = node.parentNode.children  //获取这个元素的所有兄弟姐妹</span><br><span class="line">               var array = &#123; length: 0 &#125;</span><br><span class="line">            for (let i = 0; i &lt; allChildren.length; i++) &#123;</span><br><span class="line">                  if (allChildren[i] !== node) &#123;</span><br><span class="line">                        array[array.length] = allChildren[i]</span><br><span class="line">                         array.length += 1</span><br><span class="line">                  &#125;</span><br><span class="line">             &#125;</span><br><span class="line">         return array</span><br><span class="line">         &#125;,</span><br><span class="line">         allClass: function (classes) &#123;       </span><br><span class="line">              for (let key in classes) &#123;                   //遍历这个classes</span><br><span class="line">                    let value = classes[key]               //将classes的【key】给value</span><br><span class="line">                    let madeClass = value ? &apos;add&apos; : &apos;remove&apos;</span><br><span class="line">                     node.classList[madeClass](key)</span><br><span class="line">                    &#125;</span><br><span class="line">               &#125;</span><br><span class="line">          &#125;</span><br><span class="line"> &#125;</span><br><span class="line">var Node2 = jQuery(tim3)  //jQuery接受一个旧的节点，返回一个新的对象，新的对象由新的API，这个对象就是jQuery的对象</span><br><span class="line">Node2.allsiblings()</span><br><span class="line">Node2.allClass()</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">确定是节点还是字符串</span><br><span class="line">window.jQuery = function (nodeOrSelector) &#123;</span><br><span class="line">    let nodes</span><br><span class="line">    if (nodeOrSelector === &apos;string&apos;) &#123;</span><br><span class="line">        let temp = document.querySelector(nodeOrSelector)</span><br><span class="line">        for( let i=0; i&lt; temp.length;i++ )&#123;</span><br><span class="line">            nodes[i] = temp[i]</span><br><span class="line">            node.length = temp.length</span><br><span class="line">        &#125;else if(nodeOrSelector instanceof Node)&#123;</span><br><span class="line">            nodes = &#123;</span><br><span class="line">                0 : nodeOrSelector,</span><br><span class="line">                length :1</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>实现一个 jQuery 的 API<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line">window.jQuery = function (nodeOrSelector) &#123;     获取节点或字符串</span><br><span class="line">    let $nodes = &#123;&#125;                             //初始化一个空对象，将之后字符串或数组放进去</span><br><span class="line">    if (typeof nodeOrSelector === &apos;string&apos;) &#123;   //识别输入的是节点还是字符串</span><br><span class="line">        let temp = document.querySelectorAll(nodeOrSelector)</span><br><span class="line">        for (let i = 0; i &lt; temp.length; i++) &#123;</span><br><span class="line">            $nodes[i] = temp[i]</span><br><span class="line">        &#125;</span><br><span class="line">        $nodes.length = temp.length</span><br><span class="line">    &#125; else if (nodeOrSelector instanceof Node) &#123;     //如果是节点那么久把它放入伪数组</span><br><span class="line">        nodes = &#123;</span><br><span class="line">            0: nodeOrSelector,</span><br><span class="line">            length: 1</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    $nodes.addClass = function (classes) &#123;      //获取参数，遍历找到相关节点，给相关节点添加value</span><br><span class="line">        classes.forEach((value) =&gt; &#123;</span><br><span class="line">            for (let i = 0; i &lt; $nodes.length; i++) &#123;</span><br><span class="line">                $nodes[i].classList.add(value)</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;</span><br><span class="line">    $nodes.setText = function (text) &#123;</span><br><span class="line">        if (text === undefined) &#123;               //如果文本为空，则添加文本</span><br><span class="line">            var texts = []</span><br><span class="line">            for (let i = 0; i &lt; $nodes.length; i++) &#123;</span><br><span class="line">                texts.push($nodes[i].textContent)</span><br><span class="line">            &#125;</span><br><span class="line">            return texts</span><br><span class="line">        &#125; else &#123;                      //否则输出文本内容</span><br><span class="line">            for (let i = 0; i &lt; $nodes.length; i++) &#123;</span><br><span class="line">                $nodes[i].textContent = text</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    return $nodes</span><br><span class="line">&#125;</span><br><span class="line">window.$ = jQuery</span><br><span class="line">var $div = $(&apos;div&apos;)</span><br><span class="line">$div.addClass([&apos;red&apos;]) // 可将所有 div 的 class 添加一个 red</span><br><span class="line">$div.setText(&apos;hi&apos;) // 可将所有 div 的 textContent 变为 hi</span><br></pre></td></tr></table></figure></p>
+<h4 id="7-jQuery与DOM转换"><a href="#7-jQuery与DOM转换" class="headerlink" title="7.jQuery与DOM转换"></a>7.jQuery与DOM转换</h4><p>jQuery对象和DOM对象的转换</p>
+<blockquote>
+<p>jquery转dom<br>var div = $div[0]  //这样jquery就转换成了DOM对象，或div = $div.get(0)</p>
+</blockquote>
+<blockquote>
+<p>dom转jquery<br>var $div = $(div);  //这样dom对象div，就转换成了jquery对象</p>
+</blockquote>
+<h4 id="8-jQueryAPI方法的中文网站"><a href="#8-jQueryAPI方法的中文网站" class="headerlink" title="8.jQueryAPI方法的中文网站"></a>8.<a href="http://cndevdocs.com/" target="_blank" rel="noopener">jQueryAPI方法的中文网站</a></h4>
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/jQuery/" rel="tag"># jQuery</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/04/11/二十.函数/" rel="next" title="函数">
+                <i class="fa fa-chevron-left"></i> 函数
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/04/15/二十一.DOM/" rel="prev" title="DOM">
+                DOM <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Inhaltsverzeichnis
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Übersicht
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wang hang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">24</span>
+                  <span class="site-state-item-name">Artikel</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">Tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-封装"><span class="nav-number">1.</span> <span class="nav-text">1.封装</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-命名空间"><span class="nav-number">2.</span> <span class="nav-text">2.命名空间</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-this"><span class="nav-number">3.</span> <span class="nav-text">3.this</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5-链式操作"><span class="nav-number">4.</span> <span class="nav-text">5.链式操作</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7-jQuery与DOM转换"><span class="nav-number">5.</span> <span class="nav-text">7.jQuery与DOM转换</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#8-jQueryAPI方法的中文网站"><span class="nav-number">6.</span> <span class="nav-text">8.jQueryAPI方法的中文网站</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang hang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Erstellt mit  <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
