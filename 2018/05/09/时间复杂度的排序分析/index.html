@@ -79,16 +79,16 @@
 
 
 
-<meta name="description" content="##JavaScrpt就是一门动态类型、面向对象的脚本语言 ##Node.js也是脚本  不管哪种脚本，实现的功能都差不多，只是语法不同 Bash就是一个脚本命令 Windows受文件后缀影响 linux不收文件后缀名影响 PATH就是将命令保存起来 node对应bash   ##开始12345cd ~/Desktopmkdir democd demoecho &amp;quot;hi&amp;quot; &amp;gt">
+<meta name="description" content="O(n^n )冒泡排序排一个数组，对于n个变量的数组，需要交换变量位置n^2 次，算法复杂度就是O(n^2 ) O(n log2 n)快速排序通过一趟扫描将要排序的数据分割成独立的两部分,其中一部分的所有数据都比另外一部分的所有数据都要小,然后再按此方法对这两部分数据分别进行快速排序,整个排序过程可以递归进行,以此达到整个数据变成有序序列，算法复杂度就是O(n log2 n) O(n + max)">
 <meta property="og:type" content="article">
-<meta property="og:title" content="学习脚本">
-<meta property="og:url" content="http://yoursite.com/2018/03/20/七-学习脚本/index.html">
+<meta property="og:title" content="时间复杂度的排序分析">
+<meta property="og:url" content="http://yoursite.com/2018/05/09/时间复杂度的排序分析/index.html">
 <meta property="og:site_name" content="From&#39;s blog">
-<meta property="og:description" content="##JavaScrpt就是一门动态类型、面向对象的脚本语言 ##Node.js也是脚本  不管哪种脚本，实现的功能都差不多，只是语法不同 Bash就是一个脚本命令 Windows受文件后缀影响 linux不收文件后缀名影响 PATH就是将命令保存起来 node对应bash   ##开始12345cd ~/Desktopmkdir democd demoecho &amp;quot;hi&amp;quot; &amp;gt">
-<meta property="og:updated_time" content="2018-03-31T13:21:55.580Z">
+<meta property="og:description" content="O(n^n )冒泡排序排一个数组，对于n个变量的数组，需要交换变量位置n^2 次，算法复杂度就是O(n^2 ) O(n log2 n)快速排序通过一趟扫描将要排序的数据分割成独立的两部分,其中一部分的所有数据都比另外一部分的所有数据都要小,然后再按此方法对这两部分数据分别进行快速排序,整个排序过程可以递归进行,以此达到整个数据变成有序序列，算法复杂度就是O(n log2 n) O(n + max)">
+<meta property="og:updated_time" content="2018-05-09T15:43:41.325Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="学习脚本">
-<meta name="twitter:description" content="##JavaScrpt就是一门动态类型、面向对象的脚本语言 ##Node.js也是脚本  不管哪种脚本，实现的功能都差不多，只是语法不同 Bash就是一个脚本命令 Windows受文件后缀影响 linux不收文件后缀名影响 PATH就是将命令保存起来 node对应bash   ##开始12345cd ~/Desktopmkdir democd demoecho &amp;quot;hi&amp;quot; &amp;gt">
+<meta name="twitter:title" content="时间复杂度的排序分析">
+<meta name="twitter:description" content="O(n^n )冒泡排序排一个数组，对于n个变量的数组，需要交换变量位置n^2 次，算法复杂度就是O(n^2 ) O(n log2 n)快速排序通过一趟扫描将要排序的数据分割成独立的两部分,其中一部分的所有数据都比另外一部分的所有数据都要小,然后再按此方法对这两部分数据分别进行快速排序,整个排序过程可以递归进行,以此达到整个数据变成有序序列，算法复杂度就是O(n log2 n) O(n + max)">
 
 
 
@@ -118,13 +118,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/20/七-学习脚本/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/05/09/时间复杂度的排序分析/"/>
 
 
 
 
 
-  <title>学习脚本 | From's blog</title>
+  <title>时间复杂度的排序分析 | From's blog</title>
   
 
 
@@ -231,7 +231,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/七-学习脚本/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/05/09/时间复杂度的排序分析/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang hang">
@@ -248,7 +248,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">学习脚本</h1>
+          <h1 class="post-title" itemprop="name headline">时间复杂度的排序分析</h1>
         
 
         <div class="post-meta">
@@ -260,8 +260,8 @@
               
                 <span class="post-meta-item-text">Veröffentlicht am</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:19:47+08:00">
-                2018-03-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-05-09T23:43:08+08:00">
+                2018-05-09
               </time>
             
 
@@ -298,29 +298,9 @@
       
 
       
-        <p>##JavaScrpt就是一门动态类型、面向对象的脚本语言</p>
-<p>##Node.js也是脚本</p>
-<ul>
-<li>不管哪种脚本，实现的功能都差不多，只是语法不同</li>
-<li>Bash就是一个脚本命令</li>
-<li>Windows受文件后缀影响</li>
-<li>linux不收文件后缀名影响</li>
-<li>PATH就是将命令保存起来</li>
-<li><strong>node对应bash</strong></li>
-</ul>
-<hr>
-<p>##开始<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cd ~/Desktop</span><br><span class="line">mkdir demo</span><br><span class="line">cd demo</span><br><span class="line">echo &quot;hi&quot; &gt; index.html</span><br><span class="line">cd ~/Desktop</span><br></pre></td></tr></table></figure></p>
-<p>用bash的脚本命令完成上面这些操作<br>1.首先创建一个目录local，然后新建一个文件，后缀无所谓，一般脚本的文件格式是<code>.sh</code><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">mkdir ~/local</span><br><span class="line">cd ~/local</span><br><span class="line">touch demo.txt</span><br></pre></td></tr></table></figure></p>
-<p>2.编辑 demo.txt，内容如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">mkdir demo</span><br><span class="line">cd demo</span><br><span class="line">mkdir css js</span><br><span class="line">touch index.html css/style.css js/main.js</span><br><span class="line">exit</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>##然后<br>在任意位置执行 <code>sh ~/local/demo.txt</code>即可运行此脚本</p>
-<p>#####当然为了方便，可以把它添加到PATH里<br>1.<code>cd ~/local; pwd</code>得到 local 的绝对路径<br>2.创建 ~/.bashrc：<code>touch ~/.bashrc</code>(这一步相信之前你在命令行的使用中已经创建了)<br>3.编辑<code>~/.bashrc：start ~/.bashrc</code>，在最后一行添加<code>export PATH=&quot;local的绝对路径:$PATH&quot;</code><br>4.<code>source ~/.bashrc</code><br>5.之前你要运行 <code>sh ~/local/demo.txt</code>，现在你只需要运行<code>demo.txt</code>就行了</p>
-<hr>
-<p>#node.js的命令与bash的对比<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1</span><br><span class="line">process.chdir(&quot;./&quot; + dirName) // cd $1</span><br><span class="line">fs.mkdirSync(&apos;css&apos;) // mkdir css</span><br><span class="line">fs.mkdirSync(&apos;js&apos;) // mkdir js</span><br><span class="line"></span><br><span class="line">fs.writeFileSync(&quot;./index.html&quot;, &quot;&quot;)</span><br><span class="line">fs.writeFileSync(&quot;css/style.css&quot;, &quot;&quot;)</span><br><span class="line">fs.writeFileSync(&quot;./js/main.js&quot;, &quot;&quot;)</span><br><span class="line">process.exit(0) // exit 0</span><br></pre></td></tr></table></figure></p>
-<hr>
-<p>##下面用 JS 脚本来重写 demo.sh<br>1.创建 ~/local/jsdemo.js，内容如下</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> var fs = require(&apos;fs&apos;)</span><br><span class="line"></span><br><span class="line"> var dirName = process.argv[2] // 你传的参数是从第 2 个开始的</span><br><span class="line"></span><br><span class="line"> fs.mkdirSync(&quot;./&quot; + dirName) // mkdir $1</span><br><span class="line"> process.chdir(&quot;./&quot; + dirName) // cd $1</span><br><span class="line"> fs.mkdirSync(&apos;css&apos;) // mkdir css</span><br><span class="line"> fs.mkdirSync(&apos;js&apos;) // mkdir js</span><br><span class="line"></span><br><span class="line"> fs.writeFileSync(&quot;./index.html&quot;, &quot;&quot;)</span><br><span class="line"> fs.writeFileSync(&quot;css/style.css&quot;, &quot;&quot;)</span><br><span class="line"> fs.writeFileSync(&quot;./js/main.js&quot;, &quot;&quot;)</span><br><span class="line"></span><br><span class="line"> process.exit(0)</span><br><span class="line">``</span><br></pre></td></tr></table></figure>
-<p>2.cd ~/Desktop<br>3.node ~/local/jsdemo.js zzz，就可以看到 zzz 目录创建成功了</p>
+        <p><strong>O(n^n )</strong><br>冒泡排序<br>排一个数组，对于n个变量的数组，需要交换变量位置n^2 次，算法复杂度就是O(n^2 )</p>
+<p><strong>O(n log2 n)</strong><br>快速排序<br>通过一趟扫描将要排序的数据分割成独立的两部分,其中一部分的所有数据都比另外一部分的所有数据都要小,然后再按此方法对这两部分数据分别进行快速排序,整个排序过程可以递归进行,以此达到整个数据变成有序序列，算法复杂度就是O(n log2 n)</p>
+<p><strong>O(n + max)</strong><br>基数排序<br>把元素从个位排好序，然后再从十位排好序，，，，一直到元素中最大数的最高位排好序，就搞定了，算法复杂度就是O(n + max) </p>
 
       
     </div>
@@ -345,8 +325,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/20/六-计算机如何存储数据及编码的进化/" rel="next" title="计算机如何存储数据及编码的进化">
-                <i class="fa fa-chevron-left"></i> 计算机如何存储数据及编码的进化
+              <a href="/2018/05/09/到页面加载显示完成，这个过程中都发生了什么/" rel="next" title="到页面加载显示完成，这个过程中都发生了什么">
+                <i class="fa fa-chevron-left"></i> 到页面加载显示完成，这个过程中都发生了什么
               </a>
             
           </div>
@@ -354,10 +334,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/20/八.了解HTTP的基本知识/" rel="prev" title="了解HTTP的基本知识">
-                了解HTTP的基本知识 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
