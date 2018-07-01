@@ -79,17 +79,17 @@
 
 
 
-<meta name="description" content="HTML中为button绑定事件的方式有三种。 例如以下标签： &amp;lt;button type=&amp;quot;submit&amp;quot; id=&amp;quot;btn_submit&amp;quot;&amp;gt; submit &amp;lt;/button&amp;gt; 使用jquery进行绑定 123$(&amp;apos;#btn_submit&amp;apos;).click(function()&amp;#123;&amp;#125;); 使用原生js">
+<meta name="description" content="需求设定:1.点击某个按钮，将设置的目标内容(例如下载链接地址)复制到剪切板，可以在电脑上任何地方粘贴 2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器###插件选择clipboard.js  官网链接地址：clipboard.js 引入方式：NPM方式：1npm install clipboard --save   直接引入：下载源代码以后将相关JS放在目录下，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="button绑定事件的三种方式">
-<meta property="og:url" content="http://yoursite.com/2018/06/06/button绑定事件的三种方式/index.html">
+<meta property="og:title" content="Vue中使用clipboard.js实现点击按钮复制内容到剪切板">
+<meta property="og:url" content="http://yoursite.com/2018/07/01/Vue中使用clipboard-js实现点击按钮复制内容到剪切板/index.html">
 <meta property="og:site_name" content="From&#39;s blog">
-<meta property="og:description" content="HTML中为button绑定事件的方式有三种。 例如以下标签： &amp;lt;button type=&amp;quot;submit&amp;quot; id=&amp;quot;btn_submit&amp;quot;&amp;gt; submit &amp;lt;/button&amp;gt; 使用jquery进行绑定 123$(&amp;apos;#btn_submit&amp;apos;).click(function()&amp;#123;&amp;#125;); 使用原生js">
+<meta property="og:description" content="需求设定:1.点击某个按钮，将设置的目标内容(例如下载链接地址)复制到剪切板，可以在电脑上任何地方粘贴 2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器###插件选择clipboard.js  官网链接地址：clipboard.js 引入方式：NPM方式：1npm install clipboard --save   直接引入：下载源代码以后将相关JS放在目录下，">
 <meta property="og:locale" content="default">
-<meta property="og:updated_time" content="2018-06-06T13:12:11.453Z">
+<meta property="og:updated_time" content="2018-07-01T13:12:33.484Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="button绑定事件的三种方式">
-<meta name="twitter:description" content="HTML中为button绑定事件的方式有三种。 例如以下标签： &amp;lt;button type=&amp;quot;submit&amp;quot; id=&amp;quot;btn_submit&amp;quot;&amp;gt; submit &amp;lt;/button&amp;gt; 使用jquery进行绑定 123$(&amp;apos;#btn_submit&amp;apos;).click(function()&amp;#123;&amp;#125;); 使用原生js">
+<meta name="twitter:title" content="Vue中使用clipboard.js实现点击按钮复制内容到剪切板">
+<meta name="twitter:description" content="需求设定:1.点击某个按钮，将设置的目标内容(例如下载链接地址)复制到剪切板，可以在电脑上任何地方粘贴 2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器###插件选择clipboard.js  官网链接地址：clipboard.js 引入方式：NPM方式：1npm install clipboard --save   直接引入：下载源代码以后将相关JS放在目录下，">
 
 
 
@@ -119,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/06/06/button绑定事件的三种方式/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/01/Vue中使用clipboard-js实现点击按钮复制内容到剪切板/"/>
 
 
 
 
 
-  <title>button绑定事件的三种方式 | From's blog</title>
+  <title>Vue中使用clipboard.js实现点击按钮复制内容到剪切板 | From's blog</title>
   
 
 
@@ -232,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/06/06/button绑定事件的三种方式/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/01/Vue中使用clipboard-js实现点击按钮复制内容到剪切板/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang hang">
@@ -249,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">button绑定事件的三种方式</h1>
+          <h1 class="post-title" itemprop="name headline">Vue中使用clipboard.js实现点击按钮复制内容到剪切板</h1>
         
 
         <div class="post-meta">
@@ -261,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-06-06T21:11:30+08:00">
-                2018-06-06
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-01T21:12:18+08:00">
+                2018-07-01
               </time>
             
 
@@ -299,30 +299,26 @@
       
 
       
-        <h5 id="HTML中为button绑定事件的方式有三种。"><a href="#HTML中为button绑定事件的方式有三种。" class="headerlink" title="HTML中为button绑定事件的方式有三种。"></a>HTML中为button绑定事件的方式有三种。</h5><hr>
-<p>例如以下标签：</p>
-<p><code>&lt;button type=&quot;submit&quot; id=&quot;btn_submit&quot;&gt; submit &lt;/button&gt;</code></p>
-<h3 id="使用jquery进行绑定"><a href="#使用jquery进行绑定" class="headerlink" title="使用jquery进行绑定"></a>使用jquery进行绑定</h3><hr>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$(&apos;#btn_submit&apos;).click(function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-<h3 id="使用原生js绑定，"><a href="#使用原生js绑定，" class="headerlink" title="使用原生js绑定，"></a>使用原生js绑定，</h3><hr>
-<p>注意：Internet Explorer 8 及更早IE版本不支持 addEventListener() 方法，Opera 7.0 及 Opera 更早版本也不支持。 这类浏览器版本要使用 attachEvent() 方法来添加事件<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">document.getElementById(&quot;#btn_submit&quot;).addEventListener(‘click’, function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;, false);</span><br></pre></td></tr></table></figure></p>
-<p>补充：addEventListener的第三个参数是用于决定事件模型的，当父元素和子元素都绑定了事件时，这个参数决定先触发哪个事件，false为冒泡事件模型：即子元素绑定的事件先响应，父元素绑定的事件后相应，true问捕获事件模型，与冒泡事件模型执行顺序相反，如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;test_div&quot;&gt;</span><br><span class="line">   &lt;button type=&quot;button&quot; value =&quot;测试事件顺序&quot; name=&quot;测试事件顺序&quot; id=&quot;test_button&quot;&gt;测试事件顺序&lt;/button&gt;</span><br><span class="line">&lt;/div&gt; </span><br><span class="line"></span><br><span class="line">document.getElementById(&apos;test_div&apos;).addEventListener(&apos;click&apos;, function () &#123;</span><br><span class="line">    console.log(&apos;div&apos;);</span><br><span class="line">&#125;,true)</span><br><span class="line">document.getElementById(&apos;test_button&apos;).addEventListener(&apos;click&apos;, function()&#123;</span><br><span class="line">    console.log(&apos;test1&apos;);</span><br><span class="line">&#125;,false);</span><br></pre></td></tr></table></figure></p>
-<p>这个例子的事件模型是捕获模型，会先执行div的事件再执行button的事件，这里有个需要注意的地方：决定事件模型的是父元素绑定事件时传的第三个参数，如上例中button绑定事件时传的第三个参数是不起作用的，除非它又包含了子元素。</p>
-<p>对事件模型不了解的可以查看改链接：<a href="http://www.cnblogs.com/dtdxrk/archive/2012/06/28/2567132.html" target="_blank" rel="noopener">http://www.cnblogs.com/dtdxrk/archive/2012/06/28/2567132.html</a></p>
-<h3 id="直接在button标签中使用onclick绑定"><a href="#直接在button标签中使用onclick绑定" class="headerlink" title="直接在button标签中使用onclick绑定"></a>直接在button标签中使用onclick绑定</h3><hr>
-<p><code>&lt;button type=&quot;submit&quot; id=&quot;btn_submit&quot; onclick=&quot;btnAction()&quot;&gt; submit &lt;/button&gt;</code></p>
-<p>然后在<script>标签中定义btnAtion的方法<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">        function btnAction()</span><br><span class="line">        &#123; &#125; </span><br><span class="line"></span><br><span class="line">&lt;/script&gt;</span><br></pre></td></tr></table></figure></p>
-<h4 id="比较："><a href="#比较：" class="headerlink" title="比较："></a>比较：</h4><p>1、使用jquery绑定，代码简洁，使用方便，事件绑定方式为追加绑定，即绑定多少个方法就执行多少个方法。</p>
-<p>在单一绑定的条件下，由于jQuery底层其实也是js实现，所以速度区别并不大。至少“绑定”这个环节并不会成为</p>
-<p>速度的瓶颈，除非页面上绑定事件的元素超过上万个，否则响应速度就不必纠结了，只做个事件绑定还是很快的。</p>
-<p>所以在做负载等要求不那么严格的“小程序”，从维护的角度上，建议用jQuery绑定，简单清楚，最容易维护。</p>
-<p>2、使用原生js与jquery相比的话代码量稍大，但是能让人进一步了解事件绑定的细节，对于熟悉原生js的开发者来说是值得推荐的。</p>
-<p>3、使用onclick标签绑定，代码量不大，但是html前端和js前端混在一起，不易于维护。</p>
-<p>原则上HTML代码只能体现网页的结构，具体的行为应该使用javascript代码进行绑定。</p>
-<p>如果在HTML中用onclick事件混杂js，会导致html前端和js前端的工作混在了一起，难以分离工作任务，</p>
-<p>进而难以维护。这种做法临时调试可以，但如果正式成品中不应该出现，</p>
-<p>所以不建议使用onclick标签方式进行绑定事件。</p>
-</script></p>
+        <h3 id="需求设定"><a href="#需求设定" class="headerlink" title="需求设定:"></a>需求设定:</h3><p>1.点击某个按钮，将设置的目标内容(例如下载链接地址)复制到剪切板，可以在电脑上任何地方粘贴</p>
+<h2 id="2-不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器"><a href="#2-不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器" class="headerlink" title="2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器"></a>2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器</h2><p>###插件选择clipboard.js</p>
+<ol>
+<li>官网链接地址：<a href="https://clipboardjs.com/" target="_blank" rel="noopener">clipboard.js</a></li>
+<li>引入方式：<br>NPM方式：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install clipboard --save</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>直接引入：下载源代码以后将相关JS放在目录下，之后引入：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;xxx/clipboard.min.js&quot;&gt;&lt;/script&gt;</span><br><span class="line">`</span><br></pre></td></tr></table></figure></p>
+<ol start="3">
+<li>使用方式(官方文档例子)：</li>
+</ol>
+<ul>
+<li><p>HTML(target包括但不限于input)</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;!-- Target --&gt;</span><br><span class="line">&lt;input id=&quot;foo&quot; value=&quot;https://github.com/zenorocha/clipboard.js.git&quot;&gt;</span><br><span class="line">&lt;!-- Trigger --&gt;</span><br><span class="line">&lt;button class=&quot;btn&quot; data-clipboard-target=&quot;#foo&quot;&gt;</span><br><span class="line">    点击复制</span><br><span class="line">&lt;/button&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>JS</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">var clipboard = new ClipboardJS(&apos;.btn&apos;);</span><br><span class="line">//成功回调</span><br><span class="line">clipboard.on(&apos;success&apos;, function(e) &#123;</span><br><span class="line">    console.info(&apos;Action:&apos;, e.action);</span><br><span class="line">    console.info(&apos;Text:&apos;, e.text);</span><br><span class="line">    console.info(&apos;Trigger:&apos;, e.trigger);  </span><br><span class="line">    e.clearSelection();</span><br><span class="line">&#125;);</span><br><span class="line">//失败回调</span><br><span class="line">clipboard.on(&apos;error&apos;, function(e) &#123;</span><br><span class="line">    console.error(&apos;Action:&apos;, e.action);</span><br><span class="line">    console.error(&apos;Trigger:&apos;, e.trigger);</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+
       
     </div>
     
@@ -346,8 +342,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/05/27/了解Cookie/" rel="next" title="了解Cookie">
-                <i class="fa fa-chevron-left"></i> 了解Cookie
+              <a href="/2018/06/24/了解路由/" rel="next" title="了解路由">
+                <i class="fa fa-chevron-left"></i> 了解路由
               </a>
             
           </div>
@@ -355,10 +351,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/06/10/安装webpack及配置/" rel="prev" title="安装webpack及配置">
-                安装webpack及配置 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -481,7 +473,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-5"><a class="nav-link" href="#HTML中为button绑定事件的方式有三种。"><span class="nav-number">1.</span> <span class="nav-text">HTML中为button绑定事件的方式有三种。</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用jquery进行绑定"><span class="nav-number"></span> <span class="nav-text">使用jquery进行绑定</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#使用原生js绑定，"><span class="nav-number"></span> <span class="nav-text">使用原生js绑定，</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#直接在button标签中使用onclick绑定"><span class="nav-number"></span> <span class="nav-text">直接在button标签中使用onclick绑定</span></a></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#需求设定"><span class="nav-number">1.</span> <span class="nav-text">需求设定:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器"><span class="nav-number"></span> <span class="nav-text">2.不使用任何框架和使用Flash，以最小的代码实现该功能，并能兼容所有主流浏览器</span></a></div>
             
 
           </div>
