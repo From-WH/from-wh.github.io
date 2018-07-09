@@ -1,0 +1,802 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="JS JS 有哪些数据类型？ string number boolean undefined null object symbol object 包括了数组、函数、正则、日期等对象 一旦出现（数组、函数、正则、日期、NaN）直接0分  （必考） Promise 怎么使用？  then 1$.ajax(...).then(成功函数, 失败函数)  链式 then 1$.ajax(...).then(">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端面试必考篇—JS&#x2F;DOM">
+<meta property="og:url" content="http://yoursite.com/2018/07/09/前端面试必考篇—JS-DOM/index.html">
+<meta property="og:site_name" content="From&#39;s blog">
+<meta property="og:description" content="JS JS 有哪些数据类型？ string number boolean undefined null object symbol object 包括了数组、函数、正则、日期等对象 一旦出现（数组、函数、正则、日期、NaN）直接0分  （必考） Promise 怎么使用？  then 1$.ajax(...).then(成功函数, 失败函数)  链式 then 1$.ajax(...).then(">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-09T12:35:49.564Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="前端面试必考篇—JS&#x2F;DOM">
+<meta name="twitter:description" content="JS JS 有哪些数据类型？ string number boolean undefined null object symbol object 包括了数组、函数、正则、日期等对象 一旦出现（数组、函数、正则、日期、NaN）直接0分  （必考） Promise 怎么使用？  then 1$.ajax(...).then(成功函数, 失败函数)  链式 then 1$.ajax(...).then(">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/09/前端面试必考篇—JS-DOM/"/>
+
+
+
+
+
+  <title>前端面试必考篇—JS/DOM | From's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">From's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/09/前端面试必考篇—JS-DOM/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang hang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="From's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">前端面试必考篇—JS/DOM</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-09T20:34:30+08:00">
+                2018-07-09
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h3 id="JS"><a href="#JS" class="headerlink" title="JS"></a>JS</h3><ol>
+<li><p>JS 有哪些数据类型？ string number boolean undefined null object symbol object 包括了数组、函数、正则、日期等对象 一旦出现（数组、函数、正则、日期、NaN）直接0分</p>
+</li>
+<li><p>（必考） Promise 怎么使用？</p>
+<ul>
+<li><p>then</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(...).then(成功函数, 失败函数)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>链式 then</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$.ajax(...).then(成功函数, 失败函数).then(成功函数2, 失败函数2)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>如何自己生成 Promise 对象</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">function xxx()&#123;</span><br><span class="line">    return new Promise(function(resolve, reject)&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve() 或者 reject()</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line">xxx().then(...)</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>（必考） AJAX 手写一下？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">let xhr = new XMLHttpRequest()</span><br><span class="line">xhr.open(&apos;POST&apos;, &apos;/xxxx&apos;)</span><br><span class="line">xhr.onreadystatechange = function()&#123;</span><br><span class="line">    if(xhr.readyState === 4 &amp;&amp; xhr.status === 200)&#123;</span><br><span class="line">        console.log(xhr.responseText)</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">xhr.send(&apos;a=1&amp;b=2&apos;)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>（必考）闭包是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">function ()&#123;</span><br><span class="line">    var n = 0</span><br><span class="line">    return function()&#123;</span><br><span class="line">        n += 1</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">let  adder = ()</span><br><span class="line">adder() // n === 1</span><br><span class="line">adder() // n === 2</span><br><span class="line">console.log(n) // n is not defined</span><br></pre></td></tr></table></figure>
+<p>正确参考：<a href="https://zhuanlan.zhihu.com/p/22486908" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/2248690810</a></p>
+</li>
+<li><p>（必考）这段代码里的 this 是什么？</p>
+<ol>
+<li>fn() 里面的 this 就是 window</li>
+<li>fn() 是 strict mode，this 就是 undefined</li>
+<li>a.b.c.fn() 里面的 this 就是 a.b.c</li>
+<li>new F() 里面的 this 就是新生成的实例</li>
+<li>() =&gt; console.log(this) 里面 this 跟外面的 this 的值一模一样 正确参考：<a href="https://zhuanlan.zhihu.com/p/23804247" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/238042474</a></li>
+</ol>
+</li>
+<li><p>（必考）什么是立即执行函数？使用立即执行函数的目的是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">;(function ()&#123;</span><br><span class="line">    var name</span><br><span class="line">&#125;())</span><br><span class="line">;(function ()&#123;</span><br><span class="line">    var name</span><br><span class="line">&#125;)()</span><br><span class="line">!!!!!!!function ()&#123;</span><br><span class="line">    var name</span><br><span class="line">&#125;()</span><br><span class="line">~function ()&#123;</span><br><span class="line">    var name</span><br><span class="line">&#125;()</span><br></pre></td></tr></table></figure>
+<p>造出一个函数作用域，防止污染全局变量</p>
+<p>ES 6 新语法 { let name }</p>
+</li>
+<li><p>async/await 语法了解吗？目的是什么？</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">function returnPromise()&#123;</span><br><span class="line">    return new Promise( function(resolve, reject)&#123;</span><br><span class="line">        setTimeout(()=&gt;&#123;</span><br><span class="line">            resolve(&apos;fuck&apos;)</span><br><span class="line">        &#125;,3000)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">returnPromise().then((result)=&gt;&#123;</span><br><span class="line">    result === &apos;fuck&apos;</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">var result = await returnPromise()</span><br><span class="line">result === &apos;fuck&apos;</span><br></pre></td></tr></table></figure>
+<p>把异步代码写成同步代码。</p>
+</li>
+<li><p>如何实现深拷贝？</p>
+<ol>
+<li>JSON 来深拷贝</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">var a = &#123;...&#125;</span><br><span class="line">var b = JSON.parse( JSON.stringify(a) )</span><br></pre></td></tr></table></figure>
+<p>缺点：JSON 不支持函数、引用、undefined、RegExp、Date……</p>
+<ol start="2">
+<li><p>递归拷贝</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">function clone(object)&#123;</span><br><span class="line">    var object2</span><br><span class="line">    if(! (object instanceof Object) )&#123;</span><br><span class="line">        return object</span><br><span class="line">    &#125;else if(object instanceof Array)&#123;</span><br><span class="line">        object2 = []</span><br><span class="line">    &#125;else if(object instanceof Function)&#123;</span><br><span class="line">        object2 = eval(object.toString())</span><br><span class="line">    &#125;else if(object instanceof Object)&#123;</span><br><span class="line">        object2 = &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    for(let key in object)&#123;</span><br><span class="line">        object2[key] = clone(object[key])</span><br><span class="line">    &#125;</span><br><span class="line">    return object2</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>环</p>
+</li>
+<li><p>RegExp、Date、Set、Symbol、WeakMap</p>
+</li>
+</ol>
+</li>
+<li><p>如何实现数组去重？</p>
+<ol>
+<li><p>计数排序的逻辑（只能正整数）</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">var a = [4,2,5,6,3,4,5]</span><br><span class="line">var hashTab = &#123;&#125;</span><br><span class="line">for(let i=0; i&lt;a.length;i++)&#123;</span><br><span class="line">    if(a[i] in hashTab)&#123;</span><br><span class="line">        // 什么也不做</span><br><span class="line">    &#125;else&#123;</span><br><span class="line">        hashTab[ a[i] ] = true</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line">//hashTab: &#123;4: true, 2: true, 5: true, 6:true, 3: true&#125;</span><br><span class="line">console.log(Object.keys(hashTab)) // [&apos;4&apos;,&apos;2&apos;,&apos;5&apos;,&apos;6&apos;,&apos;3&apos;]</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>Set 去重</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Array.from(new Set(a))</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>WeakMap 任意类型去重</p>
+</li>
+</ol>
+</li>
+<li><p>如何用正则实现 string.trim() ？</p>
+</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">function trim(string)&#123;</span><br><span class="line">    return string.replace(/^\s+|\s+$/, &apos;&apos;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<ol start="11">
+<li><p>JS 原型是什么？</p>
+<ul>
+<li><p>举例</p>
+<ol>
+<li><p>var a = [1,2,3]</p>
+</li>
+<li><p>只有0、1、2、length 4 个key</p>
+</li>
+<li><p>为什么可以 a.push(4) ，push 是哪来的？</p>
+</li>
+<li><p>a.<strong>proto</strong> === Array.prototype</p>
+</li>
+<li><p>push 就是沿着 a.<strong>proto</strong> 找到的，也就是 Array.prototype.push</p>
+</li>
+<li><p>Array.prototype 还有很多方法，如 join、pop、slice、splice</p>
+</li>
+<li><p>Array.prototype 就是 a 的原型（<strong>proto</strong>）</p>
+<p>参考：<a href="https://zhuanlan.zhihu.com/p/23090041" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/230900412</a></p>
+</li>
+</ol>
+</li>
+</ul>
+</li>
+<li><p>ES 6 中的 class 了解吗？</p>
+<ul>
+<li>把 MDN class 章节看完</li>
+<li>记住一个例子</li>
+</ul>
+</li>
+<li><p>JS 如何实现继承？</p>
+<ul>
+<li><p>原型链</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">function Animal()&#123;</span><br><span class="line">    this.body = &apos;肉体&apos;</span><br><span class="line">&#125;</span><br><span class="line">Animal.prototype.move = function()&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">function Human(name)&#123;</span><br><span class="line">    Animal.apply(this, arguments)</span><br><span class="line">    this.name = name</span><br><span class="line">&#125;</span><br><span class="line">// Human.prototype.__proto__ = Animal.prototype // 非法</span><br><span class="line"></span><br><span class="line">var f = function()&#123;&#125;</span><br><span class="line">f.prototype = Animal.prototype</span><br><span class="line">Human.prototype = new f()</span><br><span class="line"></span><br><span class="line">Human.prototype.useTools = function()&#123;&#125;</span><br><span class="line"></span><br><span class="line">var frank = new Human()</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>extends 关键字</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">class Animal&#123;</span><br><span class="line">    constructor()&#123;</span><br><span class="line">        this.body = &apos;肉体&apos;</span><br><span class="line">    &#125;,</span><br><span class="line">    move()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">class Human extends Animal&#123;</span><br><span class="line">    constructor(name)&#123;</span><br><span class="line">        super()</span><br><span class="line">        this.name = name</span><br><span class="line">    &#125;,</span><br><span class="line">    useTools()&#123;&#125;</span><br><span class="line">&#125;</span><br><span class="line">var frank = new Human()</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>相关题目直接反着答（放弃）</p>
+</li>
+</ol>
+<h3 id="DOM"><a href="#DOM" class="headerlink" title="DOM"></a>DOM</h3><ol>
+<li><p>DOM 事件模型是什么？</p>
+<ol>
+<li>冒泡</li>
+<li>捕获</li>
+<li><a href="http://jsbin.com/raqakog/1/edit?js,console,output" target="_blank" rel="noopener">如果这个元素是被点击的元素，那么捕获不一定在冒泡之前，顺序是由监听顺序决定的10</a>。</li>
+</ol>
+</li>
+<li><p>移动端的触摸事件了解吗？</p>
+<ol>
+<li>touchstart touchmove touchend touchcancel</li>
+<li>模拟 swipe 事件：记录两次 touchmove 的位置差，如果后一次在前一次的右边，说明向右滑了。</li>
+</ol>
+</li>
+<li><p>事件委托是什么？有什么好处？</p>
+<ol>
+<li>假设父元素有4个儿子，我不监听4个儿子，而是监听父元素，看触发事件的元素是哪个儿子，这就是事件委托。</li>
+<li>可以监听还没有出生的儿子（动态生成的元素）。省监听器。</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">function listen(element, eventType, selector, fn)&#123;</span><br><span class="line">    element.addEventListener(eventType, e=&gt;&#123;</span><br><span class="line">        if(e.target.matches(selector))&#123;</span><br><span class="line">            fn.call(el, e, el)</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;// 有 bug 但是可以应付面试官的事件委托</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">function listen(element, eventType, selector, fn) &#123;</span><br><span class="line">    element.addEventListener(eventType, e =&gt; &#123;</span><br><span class="line">        let el = e.target</span><br><span class="line">        while (!el.matches(selector)) &#123;</span><br><span class="line">            if (element === el) &#123;</span><br><span class="line">                el = null</span><br><span class="line">                break</span><br><span class="line">            &#125;</span><br><span class="line">            el = el.parentNode</span><br><span class="line">        &#125;</span><br><span class="line">        el &amp;&amp; fn.call(el, e, el)</span><br><span class="line">    &#125;)</span><br><span class="line">    return element</span><br><span class="line">&#125; // 工资 12k+ 的前端写的事件委托</span><br><span class="line">listen(ul, &apos;click&apos;, &apos;li&apos;, ()=&gt;&#123;&#125;)</span><br><span class="line"></span><br><span class="line">ul&gt;li*5&gt;span</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/08/前端面试必考篇—HTML/" rel="next" title="前端面试必考篇—HTML">
+                <i class="fa fa-chevron-left"></i> 前端面试必考篇—HTML
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wang hang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">44</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#JS"><span class="nav-number">1.</span> <span class="nav-text">JS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DOM"><span class="nav-number">2.</span> <span class="nav-text">DOM</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang hang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
