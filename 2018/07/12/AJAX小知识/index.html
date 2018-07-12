@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="1.如何发请求？我们知道有几种方式可以发请求，但是都有其局限性，如下：  用 form 可以发请求，但是会刷新页面或新开页面 用 a 可以发 get 请求，但是也会刷新页面或新开页面 用 img 可以发 get 请求，但是只能以图片的形式展示 用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示 用 script 可以发 get 请求，但是只能以脚本的形式运行  思考">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小知识">
+<meta property="og:url" content="http://yoursite.com/2018/07/12/AJAX小知识/index.html">
+<meta property="og:site_name" content="From&#39;s blog">
+<meta property="og:description" content="1.如何发请求？我们知道有几种方式可以发请求，但是都有其局限性，如下：  用 form 可以发请求，但是会刷新页面或新开页面 用 a 可以发 get 请求，但是也会刷新页面或新开页面 用 img 可以发 get 请求，但是只能以图片的形式展示 用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示 用 script 可以发 get 请求，但是只能以脚本的形式运行  思考">
+<meta property="og:locale" content="default">
+<meta property="og:updated_time" content="2018-07-12T11:48:39.812Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="小知识">
+<meta name="twitter:description" content="1.如何发请求？我们知道有几种方式可以发请求，但是都有其局限性，如下：  用 form 可以发请求，但是会刷新页面或新开页面 用 a 可以发 get 请求，但是也会刷新页面或新开页面 用 img 可以发 get 请求，但是只能以图片的形式展示 用 link 可以发 get 请求，但是只能以 CSS、favicon 的形式展示 用 script 可以发 get 请求，但是只能以脚本的形式运行  思考">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: 'Author'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2018/07/12/AJAX小知识/"/>
+
+
+
+
+
+  <title>小知识 | From's blog</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="default">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">From's blog</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle"></p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            Home
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            Archives
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/12/AJAX小知识/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="Wang hang">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="/images/avatar.gif">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="From's blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">小知识</h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">Posted on</span>
+              
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-12T19:48:18+08:00">
+                2018-07-12
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <h2 id="1-如何发请求？"><a href="#1-如何发请求？" class="headerlink" title="1.如何发请求？"></a>1.如何发请求？</h2><p>我们知道有几种方式可以发请求，但是都有其局限性，如下：</p>
+<blockquote>
+<p>用 form 可以发请求，但是会<em>刷新页面或新开页面</em></p>
+<p>用 a 可以发 get 请求，但是也会<em>刷新页面或新开页面</em></p>
+<p>用 img 可以发 get 请求，但是<em>只能以图片的形式展示</em></p>
+<p>用 link 可以发 get 请求，但是<em>只能以 CSS、favicon 的形式展示</em></p>
+<p>用 script 可以发 get 请求，但是<em>只能以脚本的形式运行</em></p>
+</blockquote>
+<p>思考：有没有这样的发请求的方式？</p>
+<blockquote>
+<ol>
+<li>get、post、put、delete 请求都行</li>
+<li>想以什么形式展示就以什么形式展示</li>
+</ol>
+</blockquote>
+<h2 id="2-AJAX-的出现"><a href="#2-AJAX-的出现" class="headerlink" title="2.AJAX 的出现"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#2ajax-%E7%9A%84%E5%87%BA%E7%8E%B0" target="_blank" rel="noopener"></a>2.AJAX 的出现</h2><blockquote>
+<p>AJAX即“Asynchronous JavaScript and XML”（异步的JavaScript与XML技术)</p>
+</blockquote>
+<h3 id="2-1-AJAX-的历史"><a href="#2-1-AJAX-的历史" class="headerlink" title="2.1 AJAX 的历史"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#21-ajax-%E7%9A%84%E5%8E%86%E5%8F%B2" target="_blank" rel="noopener"></a>2.1 AJAX 的<a href="https://zh.wikipedia.org/zh-hans/AJAX" target="_blank" rel="noopener">历史</a></h3><ul>
+<li><p>服务器之殇</p>
+<p>​ 上个世纪90年代，几乎所有的网站都由HTML页面实现，服务器处理每一个用户请求都需要重新加载网页。这样的处理方式效率不高。用户的体验是所有页面都会消失，再重新载入，即使只是一部分页面元素改变也要重新载入整个页面，不仅要刷新改变的部分，连没有变化的部分也要刷新。这会<strong>加重服务器的负担</strong>。</p>
+</li>
+<li><p>异步加载和iframe方案</p>
+<p>​ 这可以用<strong>异步加载</strong>来解决。1995年，JAVA语言的第一版发布，随之发布的的Java applets（JAVA小程序）首次实现了异步加载。浏览器通过<em>运行嵌入网页中的Java applets与服务器交换数据，不必刷新网页</em>。1996年，Internet Explorer将<strong>iframe元素</strong>加入到HTML，支持局部刷新网页。</p>
+</li>
+<li><p>XMLHttp 的出现</p>
+<p>​ 1998年前后，Outlook Web Access小组写成了允许客户端脚本发送HTTP请求（<strong>XMLHTTP</strong>）的第一个组件。该组件原属于微软Exchange Server，并且迅速地成为了Internet Explorer 4.0[2]的一部分。部分观察家认为，Outlook Web Access是第一个应用了Ajax技术的成功的商业应用程序，并成为包括Oddpost的网络邮件产品在内的许多产品的领头羊。但是，2005年初，许多事件使得Ajax被大众所接受。Google在它著名的交互应用程序中使用了异步通讯，如Google讨论组、Google地图、Google搜索建议、Gmail等。Ajax这个词由《Ajax: A New Approach to Web Applications》一文所创，该文的迅速流传提高了人们使用该项技术的意识。另外，对Mozilla/Gecko的支持使得该技术走向成熟，变得更为简单易用。</p>
+</li>
+<li><p>总结为：</p>
+<blockquote>
+<p>IE 5 率先在 JS 中引入 ActiveX 对象（API），使得 JS 可以直接发起 HTTP 请求。 随后 Mozilla、 Safari、 Opera 也跟进（抄袭）了，取名 XMLHttpRequest，并被纳入 W3C 规范</p>
+</blockquote>
+</li>
+</ul>
+<h3 id="2-2-AJAX-的优缺点"><a href="#2-2-AJAX-的优缺点" class="headerlink" title="2.2 AJAX 的优缺点"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#22-ajax-%E7%9A%84%E4%BC%98%E7%BC%BA%E7%82%B9" target="_blank" rel="noopener"></a>2.2 AJAX 的优缺点</h3><ul>
+<li><p>优点</p>
+<p>​ （1）实现局部更新：</p>
+<p>​ 就是能在不更新整个页面的前提下维护数据。这使得Web应用程序更为迅捷地回应用户动作，并避免了在网络上发送那些没有改变的信息。</p>
+<p>​ （2）仅依赖于浏览器和JavaScript：</p>
+<p>​ Ajax不需要任何浏览器插件，但需要用户允许JavaScript在浏览器上执行。就像DHTML应用程序那样，Ajax应用程序必须在众多不同的浏览器和平台上经过严格的测试。随着Ajax的成熟，一些简化Ajax使用方法的程序库也相继问世。同样，也出现了另一种辅助程序设计的技术，为那些不支持JavaScript的用户提供替代功能。</p>
+</li>
+<li><p>缺点</p>
+<p>​ （1）浏览器的兼容问题：</p>
+<p>​ Ajax在本质上是一个浏览器端的技术，首先面临无可避免的第一个问题即是浏览器的兼容性问题。各家浏览器对于JavaScript／DOM／CSS的支持总有部分不太相同或是有Bug，甚至同一浏览器的各个版本间对于JavaScript／DOM／CSS的支持也有可能部分不一样。这导致程序员在写Ajax应用时花大部分的时间在调试浏览器的兼容性而非在应用程序本身。因此，目前大部分的Ajax链接库或开发框架大多以js链接库的形式存在，以定义更高阶的JavaScript API、JavaScript对象（模板）、或者JavaScript Widgets来解决此问题。</p>
+<p>​ （2）局部刷新带来的问题：</p>
+<p>​ Ajax技术之主要目的在于局部交换客户端及服务器之间的数据。如同传统之主从架构，无可避免的会有部分的业务逻辑会实现在客户端，或部分在客户端部分在服务器。由于业务逻辑可能分散在客户端及服务器，且以不同之程序语言实现，这导致Ajax应用程序极难维护。如有用户接口或业务逻辑之更动需求，再加上前一个JavaScript/DOM/CSS 之兼容性问题，Ajax应用往往变成程序员的梦魇。</p>
+</li>
+</ul>
+<h2 id="3-AJAX-的-使用"><a href="#3-AJAX-的-使用" class="headerlink" title="3.AJAX 的 使用"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#3ajax-%E7%9A%84-%E4%BD%BF%E7%94%A8" target="_blank" rel="noopener"></a>3.AJAX 的 <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">使用</a></h2><h3 id="3-1-AJAX的原理"><a href="#3-1-AJAX的原理" class="headerlink" title="3.1 AJAX的原理"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#31-ajax%E7%9A%84%E5%8E%9F%E7%90%86" target="_blank" rel="noopener"></a>3.1 AJAX的原理</h3><ol>
+<li>使用 XMLHttpRequest 发请求</li>
+<li>服务器返回 XML 格式的字符串</li>
+<li>JS 解析 XML，并更新局部页面</li>
+</ol>
+<h3 id="3-2-AJAX-的目的："><a href="#3-2-AJAX-的目的：" class="headerlink" title="3.2 AJAX 的目的："></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#32-ajax--%E7%9A%84%E7%9B%AE%E7%9A%84" target="_blank" rel="noopener"></a>3.2 AJAX 的目的：</h3><blockquote>
+<p>使用 js 发请求 ，使用 js 处理返回的响应。</p>
+</blockquote>
+<h3 id="3-3-请用原生-JS写出一个AJAX请求："><a href="#3-3-请用原生-JS写出一个AJAX请求：" class="headerlink" title="3.3 请用原生 JS写出一个AJAX请求："></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#33-%E8%AF%B7%E7%94%A8%E5%8E%9F%E7%94%9F-js%E5%86%99%E5%87%BA%E4%B8%80%E4%B8%AAajax%E8%AF%B7%E6%B1%82" target="_blank" rel="noopener"></a>3.3 请用原生 JS写出一个AJAX请求：</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">&lt;body&gt;</span><br><span class="line">	&lt;button id=&quot;button&quot;&gt;点我&lt;/button&gt;</span><br><span class="line">	&lt;script&gt;</span><br><span class="line">		button.addEventListener(&apos;click&apos;,(e)=&gt;&#123;</span><br><span class="line">			let request = new  XMLHttpRequest()</span><br><span class="line">			request.open(method,address)</span><br><span class="line">			request.send()</span><br><span class="line">			reqeust.onreadychange() = ()=&#123;</span><br><span class="line">				if(request.readyState === 4)&#123;</span><br><span class="line">					if(request.status &gt;= 200 &amp;&amp; reuest.status&lt;  300)&#123;</span><br><span class="line">						let string = esponseText</span><br><span class="line">						let object =window.JSON.parse(string) </span><br><span class="line">					&#125;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line"></span><br><span class="line">		&#125;)</span><br><span class="line">	&lt;/script&gt;</span><br><span class="line">&lt;/body&gt;</span><br></pre></td></tr></table></figure>
+<p>分析：</p>
+<ul>
+<li><p><code>let request = new XMLHttpRequest()</code> 创建一个AJAX实例</p>
+</li>
+<li><p><code>request.open(method,address)</code> 初始化请求，一般有3个参数 ，如果没有设置就是 默认值<code>request.open(method,url,async)</code></p>
+<ul>
+<li><code>method</code> ：请求的类型；GET 或 POST</li>
+<li><code>url</code> ： 文件在服务器上的位置</li>
+<li><code>async</code> ：true（异步）或 false（同步）</li>
+</ul>
+</li>
+<li><p><code>request.send()</code> 发送请求(如果参数为String，只能为 post请求)</p>
+</li>
+<li><p><code>reqeust.onreadychange()</code> 监听 <code>readystatue</code> 的变化 ，每当 readyState 改变时，就会触发 onreadystatechange 事件。</p>
+<ul>
+<li><p><code>request.readyState</code> XMLHttpRequest 的状态。从 0 到 4 发生变化</p>
+<p>| 值 | readyState 状态 | 意义 |<br>| :-: | :-: | :-: |<br>| 0 | <code>UNSENT</code>(未打开) | <code>open()</code>方法还未被调用，请求未初始化 |<br>| 1 | <code>OPENED</code> (未发送) | <code>open()</code>方法已经被调用， 服务器连接已建立 |<br>| 2 | HEADERS_RECEIVED (已获取响应头) | <code>send()</code>方法已经被调用, 响应头和响应状态已经返回.请求已接收 |<br>| 3 | LOADING (正在下载响应体) | 响应体下载中; <code>responseText</code>中已经获取了部分数据. |<br>| 4 | DONE (请求完成) | 整个请求过程已经完毕. |</p>
+<ul>
+<li><code>request.status</code> 200表示OK；404表示未找到页面。</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="3-4-浏览器是先下载全部内容再判断成功和失败吗？"><a href="#3-4-浏览器是先下载全部内容再判断成功和失败吗？" class="headerlink" title="3.4 浏览器是先下载全部内容再判断成功和失败吗？"></a><a href="https://github.com/Jsmond2016/blog/blob/master/%E5%B7%B2%E5%AE%8C%E6%88%90/AJAX/AJAX%E5%B0%8F%E7%9F%A5%E8%AF%86.md#34-%E6%B5%8F%E8%A7%88%E5%99%A8%E6%98%AF%E5%85%88%E4%B8%8B%E8%BD%BD%E5%85%A8%E9%83%A8%E5%86%85%E5%AE%B9%E5%86%8D%E5%88%A4%E6%96%AD%E6%88%90%E5%8A%9F%E5%92%8C%E5%A4%B1%E8%B4%A5%E5%90%97" target="_blank" rel="noopener"></a>3.4 浏览器是先下载全部内容再判断成功和失败吗？</h3><p>答：</p>
+<p>不是的，从上面的HTTP响应的返回值我们知道，发送给浏览器（客户端）的响应是先发送响应头<code>responseHeader</code> ，判断之前的请求成功与失败，然后再进行下载。</p>
+<p>同时，因为响应的内容<a href="http://blog.csdn.net/yaopeng_2005/article/details/6706739" target="_blank" rel="noopener">大小有限制</a>，每次传输数据有限而分次传输，因此是先判断 ，后下载完成。</p>
+<p>参考文章：</p>
+<p>​ <a href="https://www.ibm.com/developerworks/cn/xml/wa-ajaxintro1.html" target="_blank" rel="noopener">Ajax 入门简介</a></p>
+<p>​ <a href="http://javascript.ruanyifeng.com/bom/ajax.html" target="_blank" rel="noopener">AJAX-阮一峰</a></p>
+<p>​ <a href="https://www.zhihu.com/question/31592553" target="_blank" rel="noopener">为什么form表单提交没有跨域问题，但ajax提交有跨域问题？</a></p>
+<p>​ <a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener">XMLHttpRequest-MDN</a></p>
+<p>​ <a href="https://developer.mozilla.org/zh-CN/docs/Web/Guide/AJAX" target="_blank" rel="noopener">AJAX-MDN</a></p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2018/07/11/前端面试必考篇—VUE、算法、webpack/" rel="next" title="前端面试必考篇—VUE、算法、webpack">
+                <i class="fa fa-chevron-left"></i> 前端面试必考篇—VUE、算法、webpack
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            Overview
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <p class="site-author-name" itemprop="name">Wang hang</p>
+              <p class="site-description motion-element" itemprop="description"></p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">47</span>
+                  <span class="site-state-item-name">posts</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+              
+              
+              <div class="site-state-item site-state-tags">
+                
+                  <span class="site-state-item-count">2</span>
+                  <span class="site-state-item-name">tags</span>
+                
+              </div>
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-如何发请求？"><span class="nav-number">1.</span> <span class="nav-text">1.如何发请求？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-AJAX-的出现"><span class="nav-number">2.</span> <span class="nav-text">2.AJAX 的出现</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#2-1-AJAX-的历史"><span class="nav-number">2.1.</span> <span class="nav-text">2.1 AJAX 的历史</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-2-AJAX-的优缺点"><span class="nav-number">2.2.</span> <span class="nav-text">2.2 AJAX 的优缺点</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-AJAX-的-使用"><span class="nav-number">3.</span> <span class="nav-text">3.AJAX 的 使用</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#3-1-AJAX的原理"><span class="nav-number">3.1.</span> <span class="nav-text">3.1 AJAX的原理</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-2-AJAX-的目的："><span class="nav-number">3.2.</span> <span class="nav-text">3.2 AJAX 的目的：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-3-请用原生-JS写出一个AJAX请求："><span class="nav-number">3.3.</span> <span class="nav-text">3.3 请用原生 JS写出一个AJAX请求：</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-4-浏览器是先下载全部内容再判断成功和失败吗？"><span class="nav-number">3.4.</span> <span class="nav-text">3.4 浏览器是先下载全部内容再判断成功和失败吗？</span></a></li></ol></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2018</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Wang hang</span>
+
+  
+</div>
+
+
+  <div class="powered-by">Powered by <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a></div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">Theme &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
