@@ -79,19 +79,17 @@
 
 
 
-<meta name="description" content="VSCode 安装1.从官网下载安装包安装时把以下选项选中： 使用1.找个地方新建一个目录（目录名不要中文），假设目录名为 vs-demo2.右键点击该目录，open with code3.使用 Ctrl+Shift+E 打开资源管理器，在 vs-demo 目录里新建 HTML 文件，文件名为 index.html4.在 index.html 依次输入：英文感叹号、回车 键，即可看到一个完整的 H">
+<meta name="description" content="优化dns查询尽量把资源都放在一个网站，如css、js，尽量减少域名，这样就可以减少dns查询 优化TCP连接开启连接复用，在请求头里写keep-alive使用HTTP/2.0的多路复用 发送HTTP请求不滥用cookie，尽量减小cookie体积使用cache-control（缓存），一段时间内不发送请求，用缓存文件同时发送多个请求，如css和js，会同时下载提高效率，但和减少dns查询起冲突，">
 <meta property="og:type" content="article">
-<meta property="og:title" content="VSCode安装及配置">
-<meta property="og:url" content="http://yoursite.com/2018/03/20/三-VSCode安装及配置/index.html">
+<meta property="og:title" content="Web性能优化">
+<meta property="og:url" content="http://yoursite.com/2018/07/13/Web性能优化/index.html">
 <meta property="og:site_name" content="From&#39;s blog">
-<meta property="og:description" content="VSCode 安装1.从官网下载安装包安装时把以下选项选中： 使用1.找个地方新建一个目录（目录名不要中文），假设目录名为 vs-demo2.右键点击该目录，open with code3.使用 Ctrl+Shift+E 打开资源管理器，在 vs-demo 目录里新建 HTML 文件，文件名为 index.html4.在 index.html 依次输入：英文感叹号、回车 键，即可看到一个完整的 H">
+<meta property="og:description" content="优化dns查询尽量把资源都放在一个网站，如css、js，尽量减少域名，这样就可以减少dns查询 优化TCP连接开启连接复用，在请求头里写keep-alive使用HTTP/2.0的多路复用 发送HTTP请求不滥用cookie，尽量减小cookie体积使用cache-control（缓存），一段时间内不发送请求，用缓存文件同时发送多个请求，如css和js，会同时下载提高效率，但和减少dns查询起冲突，">
 <meta property="og:locale" content="default">
-<meta property="og:image" content="https://upload-images.jianshu.io/upload_images/11007474-3443031529a7f112.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
-<meta property="og:updated_time" content="2018-03-31T13:20:41.266Z">
+<meta property="og:updated_time" content="2018-07-13T04:53:36.473Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="VSCode安装及配置">
-<meta name="twitter:description" content="VSCode 安装1.从官网下载安装包安装时把以下选项选中： 使用1.找个地方新建一个目录（目录名不要中文），假设目录名为 vs-demo2.右键点击该目录，open with code3.使用 Ctrl+Shift+E 打开资源管理器，在 vs-demo 目录里新建 HTML 文件，文件名为 index.html4.在 index.html 依次输入：英文感叹号、回车 键，即可看到一个完整的 H">
-<meta name="twitter:image" content="https://upload-images.jianshu.io/upload_images/11007474-3443031529a7f112.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600">
+<meta name="twitter:title" content="Web性能优化">
+<meta name="twitter:description" content="优化dns查询尽量把资源都放在一个网站，如css、js，尽量减少域名，这样就可以减少dns查询 优化TCP连接开启连接复用，在请求头里写keep-alive使用HTTP/2.0的多路复用 发送HTTP请求不滥用cookie，尽量减小cookie体积使用cache-control（缓存），一段时间内不发送请求，用缓存文件同时发送多个请求，如css和js，会同时下载提高效率，但和减少dns查询起冲突，">
 
 
 
@@ -121,13 +119,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/2018/03/20/三-VSCode安装及配置/"/>
+  <link rel="canonical" href="http://yoursite.com/2018/07/13/Web性能优化/"/>
 
 
 
 
 
-  <title>VSCode安装及配置 | From's blog</title>
+  <title>Web性能优化 | From's blog</title>
   
 
 
@@ -234,7 +232,7 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/03/20/三-VSCode安装及配置/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2018/07/13/Web性能优化/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="name" content="Wang hang">
@@ -251,7 +249,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">VSCode安装及配置</h1>
+          <h1 class="post-title" itemprop="name headline">Web性能优化</h1>
         
 
         <div class="post-meta">
@@ -263,8 +261,8 @@
               
                 <span class="post-meta-item-text">Posted on</span>
               
-              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-03-20T22:12:58+08:00">
-                2018-03-20
+              <time title="Post created" itemprop="dateCreated datePublished" datetime="2018-07-13T12:53:24+08:00">
+                2018-07-13
               </time>
             
 
@@ -301,13 +299,14 @@
       
 
       
-        <h1 id="VSCode"><a href="#VSCode" class="headerlink" title="VSCode"></a>VSCode</h1><ul>
-<li><strong>安装</strong><br>1.从官网下载安装包<br>安装时把以下选项选中：<br><img src="https://upload-images.jianshu.io/upload_images/11007474-3443031529a7f112.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/600" alt="image.png"></li>
-<li><strong>使用</strong><br>1.找个地方新建一个目录（目录名不要中文），假设目录名为 vs-demo<br>2.右键点击该目录，open with code<br>3.使用 Ctrl+Shift+E 打开资源管理器，在 vs-demo 目录里新建 HTML 文件，文件名为 index.html<br>4.在 index.html 依次输入：英文感叹号、<kbd>回车</kbd> 键，即可看到一个完整的 HTML 页面<br>这种快捷写法叫做 Emmet，目前所有的前端编辑器都支持 Emmet。<br><a href="https://docs.emmet.io/cheat-sheet/" target="_blank" rel="noopener">Emmet作弊表</a></li>
-<li><strong>配置</strong><br>VSCode 的配置方式就写编辑一个配置文件，打开「文件 - 首选项 - 设置」，对应快捷键为 <kbd>Ctrl</kbd> + <kbd>,</kbd><br>左侧为系统默认配置项，右侧为你要覆盖的配置项。把你要修改的项从左边拷贝到右边，然后保存，即可生效。</li>
-<li><strong>设置字体与字号</strong><br>首先：笔者个人觉得默认就挺好，如果不喜欢可以自行设置：<br>在上面配置中,在右侧文件中添加一行（注意末尾要有英文逗号）<br><code>&quot;editor.fontSize&quot;: 18,</code><br>保存，字号就变大了。<br>设置字体也是类似，添加<br><code>&quot;editor.fontFamily&quot;: &quot;Consolas, &#39;Courier New&#39;, monospace&quot;,</code><br>即可将字体设置为你想要的。</li>
-<li><strong>安装插件</strong><br>VSCode 自带 Emmet、Git 继承和 JS 调试功能<br><strong>安装 open in browser</strong><br>按 Ctrl + Shift + X 打开扩展面板，然后输入 open in browser，点击第一个结果的「安装」按钮，稍等片刻就安装好了。<br>安装好后，就可以在编辑栏右键点击直接使用默认浏览器进行查看。<br><em>待续</em></li>
-</ul>
+        <h3 id="优化dns查询"><a href="#优化dns查询" class="headerlink" title="优化dns查询"></a>优化dns查询</h3><p>尽量把资源都放在一个网站，如css、js，尽量减少域名，这样就可以减少dns查询</p>
+<h3 id="优化TCP连接"><a href="#优化TCP连接" class="headerlink" title="优化TCP连接"></a>优化TCP连接</h3><p>开启连接复用，在请求头里写keep-alive<br>使用HTTP/2.0的多路复用</p>
+<h3 id="发送HTTP请求"><a href="#发送HTTP请求" class="headerlink" title="发送HTTP请求"></a>发送HTTP请求</h3><p>不滥用cookie，尽量减小cookie体积<br>使用cache-control（缓存），一段时间内不发送请求，用缓存文件<br>同时发送多个请求，如css和js，会同时下载提高效率，但和减少dns查询起冲突，所以文件少的时候，可以把所有资源放一个域名里，减少dns查询，但当文件多的时候可以把每8个文件放同一个域名里，这样8个文件以同时请求，减少了请求时间，</p>
+<h3 id="接收响应"><a href="#接收响应" class="headerlink" title="接收响应"></a>接收响应</h3><p>ETag<br>服务器检查网页有无更新(md5)，没有更新的话就返回304<br>GZip<br>用GZip把css、js压缩，再发送</p>
+<h3 id="优化js和css"><a href="#优化js和css" class="headerlink" title="优化js和css"></a>优化js和css</h3><p>不要把js、css写在html里，这样js、css文件就可以缓存<br>合并文件，把多个js合并成一个，减少请求数<br>把js和css文件都放在cdn，因为距离很远的请求费时很长，把文件放在cdn可解决距离的问题，还可以增加并发下载数<br>把css放在head里，js放在body最后，因为css不管放在哪都会阻塞html渲染，所以放在前面先下载，js放后面可以让html先显示，并且可以直接获取到节点（因为html已经加载完了）</p>
+<h3 id="延时加载（加薪）"><a href="#延时加载（加薪）" class="headerlink" title="延时加载（加薪）"></a>延时加载（加薪）</h3><p>首先只加载第一屏的内容，让用户可以很快看到第一屏，过20ms或者等用户往下滑再加载下面的内容<br>加个loading动画</p>
+<h3 id="预加载"><a href="#预加载" class="headerlink" title="预加载"></a>预加载</h3><h3 id="如何测试一个网站"><a href="#如何测试一个网站" class="headerlink" title="如何测试一个网站"></a>如何测试一个网站</h3><p>打开网站，打开控制台的Audits选项</p>
+<p><a href="https://github.com/creeperyang/blog/issues/1" target="_blank" rel="noopener">更多性能优化查看</a></p>
 
       
     </div>
@@ -332,8 +331,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/03/20/二.进制转换/" rel="next" title="进制转换">
-                <i class="fa fa-chevron-left"></i> 进制转换
+              <a href="/2018/07/12/AJAX小知识/" rel="next" title="小知识">
+                <i class="fa fa-chevron-left"></i> 小知识
               </a>
             
           </div>
@@ -341,10 +340,6 @@
           <span class="post-nav-divider"></span>
 
           <div class="post-nav-prev post-nav-item">
-            
-              <a href="/2018/03/20/四-命令行基础/" rel="prev" title="命令行基础">
-                命令行基础 <i class="fa fa-chevron-right"></i>
-              </a>
             
           </div>
         </div>
@@ -467,7 +462,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#VSCode"><span class="nav-number">1.</span> <span class="nav-text">VSCode</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#优化dns查询"><span class="nav-number">1.</span> <span class="nav-text">优化dns查询</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化TCP连接"><span class="nav-number">2.</span> <span class="nav-text">优化TCP连接</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#发送HTTP请求"><span class="nav-number">3.</span> <span class="nav-text">发送HTTP请求</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#接收响应"><span class="nav-number">4.</span> <span class="nav-text">接收响应</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#优化js和css"><span class="nav-number">5.</span> <span class="nav-text">优化js和css</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#延时加载（加薪）"><span class="nav-number">6.</span> <span class="nav-text">延时加载（加薪）</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#预加载"><span class="nav-number">7.</span> <span class="nav-text">预加载</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#如何测试一个网站"><span class="nav-number">8.</span> <span class="nav-text">如何测试一个网站</span></a></li></ol></div>
             
 
           </div>
